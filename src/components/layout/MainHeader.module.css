@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  padding: 0 10%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(235, 241, 180);
+}
+
+.logo img {
+  height: 70px;
+  width: 30px;
+}
+
+.season label {
+  padding: 3px;
+}
+
+.season input {
+  margin: 2px;
+}

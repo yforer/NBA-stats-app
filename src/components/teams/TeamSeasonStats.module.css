@@ -1,0 +1,14 @@
+.stats {
+  width: 100%;
+  background-color: brown;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.record {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

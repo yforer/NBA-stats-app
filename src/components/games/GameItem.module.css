@@ -1,0 +1,29 @@
+.list {
+  position: relative;
+  background-color: bisque;
+  border-radius: 8px;
+}
+
+.date {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list button {
+  padding: 4px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(9, 18, 66);
+  background-color: antiquewhite;
+  width: 50%;
+  box-shadow: 0 3px 3px 0 rgb(29, 25, 25);
+}
