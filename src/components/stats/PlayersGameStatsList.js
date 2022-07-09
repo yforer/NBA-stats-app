@@ -47,6 +47,3 @@ const PlayersGameStatsList = (props) => {
 };
 
 export default PlayersGameStatsList;
-
-//
-//
