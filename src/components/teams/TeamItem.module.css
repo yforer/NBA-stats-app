@@ -1,8 +1,11 @@
 .team {
   position: relative;
   margin: 24px;
-  background-color: rgb(9, 18, 66);
-  box-shadow: 0 10px 10px 0 rgb(5, 5, 5);
+  background-color: transparent;
+  box-shadow: 0 10px 10px 0 rgb(97, 20, 20);
+  border-radius: 16px;
+  border: 2px solid white;
+  transition: background-color 0.3s;
 }
 
 .teamImg {
@@ -17,6 +20,7 @@
   width: 100%;
   height: 100%;
   line-height: 0;
+  padding: 24px;
 }
 
 .btn {
@@ -30,4 +34,8 @@
   color: transparent;
   padding: 0;
   border-color: transparent;
+}
+
+.team:hover {
+  background-color: white;
 }

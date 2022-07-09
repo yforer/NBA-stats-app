@@ -6,10 +6,12 @@ import TeamsLanding from "./pages/TeamsLanding";
 import TeamGamesPage from "./components/teams/TeamGamesPage";
 import { Fragment, useState } from "react";
 import StatsPopup from "./components/stats/StatsPopup";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import statsActions from "./store/stats";
 
 function App() {
-  const statsIsShowen = useSelector((state) => state.stats.statsIsShowen);
+  let statsIsShowen = useSelector((state) => state.stats.statsIsShowen);
+
   return (
     <Fragment>
       {statsIsShowen && <StatsPopup />}

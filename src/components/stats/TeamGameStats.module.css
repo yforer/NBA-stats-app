@@ -1,0 +1,70 @@
+.container {
+  border: 1px white solid;
+  border-radius: 8px;
+  background-color: rgb(9, 18, 66);
+  max-width: 800px;
+  margin: auto;
+  max-height: 600px;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  padding: 16px;
+  border-bottom: 1px white solid;
+}
+
+.info button {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.date {
+  padding: 0px;
+}
+.stats {
+  overflow-y: scroll;
+  max-width: inherit;
+  max-height: 500px;
+}
+
+.team {
+  text-align: center;
+  font-weight: bold;
+  padding: 16px;
+}
+.stats ul {
+  list-style: none;
+  width: 90%;
+  margin: auto;
+  padding: 0;
+}
+
+.stats::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stats::-webkit-scrollbar-button {
+  display: none;
+}
+
+.stats::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 8px;
+}
+.stats::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.list div {
+  padding: 16px;
+  text-align: center;
+}

@@ -1,0 +1,39 @@
+.container {
+  border: 1px white solid;
+  border-radius: 8px;
+  background-color: rgb(9, 18, 66);
+  max-width: 1000px;
+  margin: auto;
+  max-height: 600px;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.date button {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.team {
+  display: flex;
+}
+
+.team button {
+  width: 50%;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  padding: 8px 0 8px;
+}
+
+.active,
+.team button:hover {
+  background-color: grey;
+}

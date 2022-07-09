@@ -6,8 +6,8 @@ const AwayTeamGameItem = (props) => {
     <div className={classes.team}>
       <h2>{props.score}</h2>
       <div className={classes.logo}>
-        <p>{props.team.name}</p>
         <img src={svgDir(`./${props.team.id}.svg`)} alt={props.team.name}></img>
+        <p>{props.team.name}</p>
       </div>
     </div>
   );

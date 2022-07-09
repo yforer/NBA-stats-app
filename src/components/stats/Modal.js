@@ -9,6 +9,7 @@ const Backdrop = () => {
 
   const closePopup = () => {
     dispatch(statsActions.hideStatsHandler());
+    dispatch(statsActions.initiateStatsChosen());
   };
 
   return <div className={classes.backdrop} onClick={closePopup}></div>;
