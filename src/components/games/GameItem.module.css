@@ -1,29 +1,47 @@
 .list {
   position: relative;
-  background-color: bisque;
-  border-radius: 8px;
-}
-
-.date {
-  margin: auto;
-  text-align: center;
-  margin-bottom: 0;
-  padding: 0;
+  background-color: #08085e;
+  border-radius: 24px;
+  margin-bottom: 24px;
+  border: 2px solid white;
 }
 
 .game {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
+}
+.date {
+  margin: auto;
+  text-align: center;
+  padding: 0;
+  max-width: min-content;
+  color: #6d76be;
+}
+
+.data {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 15%;
+  color: #6d76be;
 }
 
 .list button {
   padding: 4px;
-  border: none;
-  border-radius: 8px;
+  border-bottom: none;
+  border-top: 1px dotted white;
+  border-left: none;
+  border-right: none;
+
   cursor: pointer;
-  color: rgb(9, 18, 66);
-  background-color: antiquewhite;
+  color: #6d76be;
+  background-color: transparent;
   width: 50%;
-  box-shadow: 0 3px 3px 0 rgb(29, 25, 25);
+  /* box-shadow: 0 3px 3px 0 rgb(220, 212, 212); */
+  transition: color 0.3s;
+}
+
+.list button:hover {
+  color: white;
 }

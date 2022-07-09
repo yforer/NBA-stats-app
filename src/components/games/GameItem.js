@@ -22,18 +22,40 @@ const GameItem = (props) => {
   }).format(date);
 
   const teamsStatsHandler = () => {
+    const gameId = props.id;
     dispatch(statsActions.showStatsHandler());
+    dispatch(
+      statsActions.gameChosenHandler({
+        gameId: gameId,
+        homeTeam: homeTeam.name,
+        visitorTeam: visitorTeam.name,
+        date: formattedDate,
+      })
+    );
+    dispatch(statsActions.teamGameStatsChosenHandler());
   };
-  const playersStatsHandler = () => {};
+
+  const playersStatsHandler = (event) => {
+    dispatch(statsActions.showStatsHandler());
+    dispatch(
+      statsActions.gameChosenHandler({
+        gameId: props.id,
+        homeTeam: homeTeam.name,
+        visitorTeam: visitorTeam.name,
+        date: formattedDate,
+      })
+    );
+    dispatch(statsActions.playersGameStatsChosenHandler());
+  };
 
   return (
     <li className={classes.list}>
-      <div className={classes.date}>
-        <h2>{formattedDate}</h2>
-      </div>
       <div className={classes.game}>
-        <TeamGameItem team={homeTeam} score={props.homeTeamScore} />
-        <AwayTeamGameItem team={visitorTeam} score={props.visitorTeamScore} />
+        <div className={classes.date}>{formattedDate}</div>
+        <div className={classes.data}>
+          <TeamGameItem team={homeTeam} score={props.homeTeamScore} />
+          <AwayTeamGameItem team={visitorTeam} score={props.visitorTeamScore} />
+        </div>
       </div>
       <button onClick={teamsStatsHandler}>teams stats</button>
       <button onClick={playersStatsHandler}>players stats</button>
