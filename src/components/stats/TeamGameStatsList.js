@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { fuseTeamsStatsObjects } from "../../services/teamGameStatsService";
 import classes from "./TeamGameStats.module.css";
 
 const TeamGameStatsList = (props) => {

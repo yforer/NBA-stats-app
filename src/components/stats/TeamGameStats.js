@@ -2,7 +2,6 @@ import classes from "./TeamGameStats.module.css";
 import { useSelector } from "react-redux";
 import TeamGameStatsList from "./TeamGameStatsList";
 
-
 const TeamGameStats = (props) => {
   const gameStats = props.gameStats;
   const gameInfo = useSelector((state) => state.stats.gameInfo);
@@ -17,9 +16,7 @@ const TeamGameStats = (props) => {
       </div>
       <div className={classes.stats}>
         <ul>
-          <TeamGameStatsList
-            gameStats={gameStats}
-          />
+          <TeamGameStatsList gameStats={gameStats} />
         </ul>
       </div>
     </div>
