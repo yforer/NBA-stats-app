@@ -1,5 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getSeasonTeamGamesAPI } from "../../services/BallDontLieAPICalls";
 import GamesList from "../games/GamesList";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { teamsLogos } from "./TeamsLogos";
@@ -17,33 +18,11 @@ const TeamGamesPage = () => {
   const getTeamGames = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(
-        `https://www.balldontlie.io/api/v1/games?seasons[]=${seasonYear}&team_ids[]=${team.numId}&per_page=100`
+
+      const sortedDataByDates = await getSeasonTeamGamesAPI(
+        seasonYear,
+        team.numId
       );
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch team games");
-      }
-
-      const data = await response.json();
-
-      if (data.meta.total_pages > 1) {
-        const responsePage2 = await fetch(
-          `https://www.balldontlie.io/api/v1/games?seasons[]=${seasonYear}&team_ids[]=${team.numId}&per_page=100&page=2`
-        );
-
-        if (!responsePage2.ok) {
-          throw new Error("Failed to fetch team games (page 2)");
-        }
-
-        const dataPage2 = await responsePage2.json();
-
-        data.data.push(...dataPage2.data);
-      }
-
-      const sortedDataByDates = data.data.slice().sort((game1, game2) => {
-        return game2.date > game1.date ? -1 : game2.date < game1.date ? 1 : 0;
-      });
 
       setGames(sortedDataByDates);
     } catch (error) {

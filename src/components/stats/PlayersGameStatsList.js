@@ -7,9 +7,7 @@ const PlayersGameStatsList = (props) => {
     return playerB.pts > playerA.pts ? 1 : playerA.pts > +playerB.pts ? -1 : 0;
   });
 
-  console.log(teamStats);
   const playersNames = teamStats.map((player) => player.name);
-  console.log(playersNames);
   const formattedstats = teamStats.map((player, index) => {
     delete player.name;
     player = Object.entries(player);
@@ -22,11 +20,12 @@ const PlayersGameStatsList = (props) => {
   );
 
   const playersNamesContent = playersNames.map((player) => <div>{player}</div>);
+
   const statsContent = formattedstats.map((player) => {
     for (let i = 0; i < formattedstats[0].length; i++) {
       player[i] = <div>{player[i][1]}</div>;
     }
-    player = <li>{player}</li>;
+    player = <li key={player[0][1]}>{player}</li>;
     return player;
   });
 

@@ -22,33 +22,32 @@ const PlayersGameStats = (props) => {
   const homeTeamPlayersStats = separatePlayersToTeams(gameInfo.homeTeam);
   const visitorTeamPlayersStats = separatePlayersToTeams(gameInfo.visitorTeam);
 
-  const formatPlayersStats = (team) => {
-    const playersStats = team.map(
+  const formatPlayersStats = (playersStats) => {
+    return playersStats.map(
       (player) =>
         (player = {
+          name: `${player.player.first_name} ${player.player.last_name}`,
+          min: player.min,
+          pts: player.pts,
           ast: player.ast,
+          reb: player.reb,
           blk: player.blk,
+          stl: player.stl,
           dreb: player.dreb,
-          fg3_pct: (player.fg3_pct * 100).toFixed(0) + "%",
+          oreb: player.oreb,
           fg3a: player.fg3a,
           fg3m: player.fg3m,
-          fg_pct: (player.fg_pct * 100).toFixed(0) + "%",
+          fg3_pct: (player.fg3_pct * 100).toFixed(0) + "%",
           fga: player.fga,
           fgm: player.fgm,
-          ft_pt: (player.ft_pct * 100).toFixed(0) + "%",
+          fg_pct: (player.fg_pct * 100).toFixed(0) + "%",
           fta: player.fta,
           ftm: player.ftm,
-          min: player.min,
-          oreb: player.oreb,
+          ft_pt: (player.ft_pct * 100).toFixed(0) + "%",
           pf: player.pf,
-          pts: player.pts,
-          reb: player.reb,
-          stl: player.stl,
           turnover: player.turnover,
-          name: `${player.player.first_name} ${player.player.last_name}`,
         })
     );
-    return playersStats;
   };
 
   const homeTeamStats = formatPlayersStats(homeTeamPlayersStats);
