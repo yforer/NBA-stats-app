@@ -7,6 +7,7 @@
   width: 100%;
   padding: 0;
   margin-top: 16px;
+  max-width: 1280px;
 }
 
 .nav li {
@@ -19,22 +20,22 @@
 .nav a {
   position: absolute;
   text-decoration: none;
-  background-color: #08085e;
-  color: white;
-  padding: 8px 20vw;
-  width: 100%;
+  background-color: var(--background-primary-color);
+  color: var(--text-primary-color);
+  padding: 8px 0 8px;
+  width: inherit;
   text-align: center;
   font-size: 1.25rem;
   transition: border-bottom 0.3s;
   overflow: hidden;
-  border-bottom: 1px solid #6d76be;
+  border-bottom: 1px solid var(--background-secondary-color);
 }
 
 .nav a:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--text-primary-color);
 }
 .nav a:active,
 .nav a.active {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--text-primary-color);
   font-weight: bold;
 }

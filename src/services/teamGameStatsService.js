@@ -1,4 +1,4 @@
-export const separatePlatersToTeams = (gameStats, teamFullName) =>
+export const separatePlayersToTeams = (gameStats, teamFullName) =>
   gameStats.filter((player) => player.team.full_name === teamFullName);
 
 export const playersToTeamStats = (teamPlayersStats) => {
@@ -28,7 +28,7 @@ export const playersToTeamStats = (teamPlayersStats) => {
   return teamGameStats;
 };
 
-export const fuseTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
+export const mergeTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
   const homeTeamStatsArray = Object.entries(homeTeamStats);
   const visitorTeamStatsArray = Object.entries(visitorTeamStats);
 

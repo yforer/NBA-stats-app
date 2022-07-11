@@ -9,8 +9,11 @@ const Layout = (props) => {
 
   return (
     <Fragment>
+      <div className={classes.header}>
+
       <MainHeader />
       {isSeasonChosen && <MainNavigation />}
+      </div>
       <main className={classes.main}>{props.children}</main>
     </Fragment>
   );

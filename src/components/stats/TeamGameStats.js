@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import TeamGameStatsList from "./TeamGameStatsList";
 import {
   playersToTeamStats,
-  separatePlatersToTeams,
+  separatePlayersToTeams,
 } from "../../services/teamGameStatsService";
 
 const TeamGameStats = (props) => {
@@ -11,11 +11,11 @@ const TeamGameStats = (props) => {
   const gameInfo = useSelector((state) => state.stats.gameInfo);
 
   const homeTeamStats = playersToTeamStats(
-    separatePlatersToTeams(gameStats, gameInfo.homeTeam)
+    separatePlayersToTeams(gameStats, gameInfo.homeTeam)
   );
 
   const visitorTeamStats = playersToTeamStats(
-    separatePlatersToTeams(gameStats, gameInfo.visitorTeam)
+    separatePlayersToTeams(gameStats, gameInfo.visitorTeam)
   );
 
   return (

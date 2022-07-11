@@ -1,9 +1,9 @@
 import { Fragment } from "react";
-import { fuseTeamsStatsObjects } from "../../services/teamGameStatsService";
+import { mergeTeamsStatsObjects } from "../../services/teamGameStatsService";
 import classes from "./TeamGameStats.module.css";
 
 const TeamGameStatsList = (props) => {
-  const allTeamsStatsArray = fuseTeamsStatsObjects(
+  const allTeamsStatsArray = mergeTeamsStatsObjects(
     props.homeTeamStats,
     props.visitorTeamStats
   );

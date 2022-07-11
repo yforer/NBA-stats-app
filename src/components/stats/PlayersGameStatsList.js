@@ -1,45 +1,65 @@
 import { Fragment } from "react";
+import {
+  formatAndSortPlayersStats,
+  createPlayerNamesArray,
+  createCategeriesArray,
+} from "../../services/playersGameStatsService";
 import stats from "../../store/stats";
 import classes from "./PlayersGameStatsList.module.css";
 
 const PlayersGameStatsList = (props) => {
-  const teamStats = props.chosenTeam.slice().sort((playerA, playerB) => {
-    return playerB.pts > playerA.pts ? 1 : playerA.pts > +playerB.pts ? -1 : 0;
-  });
+  const formattedPlayersStats = formatAndSortPlayersStats(props.chosenTeam);
+  const playerNames = createPlayerNamesArray(formattedPlayersStats);
+  const categories = createCategeriesArray(formattedPlayersStats);
 
-  const playersNames = teamStats.map((player) => player.name);
-  const formattedstats = teamStats.map((player, index) => {
-    delete player.name;
-    player = Object.entries(player);
-    const name = player.unshift(["name", playersNames[index]]);
-    return player;
-  });
+  const createContent = (playersStats, categoriesArray) => {
+    const dataContent = playersStats.map((player) => (
+      <li>
+        <div>{player.min}</div>
+        <div>{player.pts}</div>
+        <div>{player.ast}</div>
+        <div>{player.reb}</div>
+        <div>{player.blk}</div>
+        <div>{player.stl}</div>
+        <div>{player.dreb}</div>
+        <div>{player.oreb}</div>
+        <div>{player.fg3a}</div>
+        <div>{player.fg3m}</div>
+        <div>{player.fg3_pct}</div>
+        <div>{player.fga}</div>
+        <div>{player.fgm}</div>
+        <div>{player.fg_pct}</div>
+        <div>{player.fta}</div>
+        <div>{player.ftm}</div>
+        <div>{player.ft_pct}</div>
+        <div>{player.pf}</div>
+        <div>{player.turnover}</div>
+      </li>
+    ));
 
-  const categoriesArray = formattedstats[1].map(
-    (category) => (category = category[0])
-  );
+    const categoriesContent = (
+      <li>
+        {categoriesArray.map((category) => (
+          <div>{category.toUpperCase()}</div>
+        ))}
+      </li>
+    );
 
-  const playersNamesContent = playersNames.map((player) => <div>{player}</div>);
+    const mergeArrays = dataContent.unshift(categoriesContent);
+    return dataContent;
+  };
 
-  const statsContent = formattedstats.map((player) => {
-    for (let i = 0; i < formattedstats[0].length; i++) {
-      player[i] = <div>{player[i][1]}</div>;
-    }
-    player = <li key={player[0][1]}>{player}</li>;
-    return player;
-  });
+  const statsContent = createContent(formattedPlayersStats, categories);
 
-  const categoriesContent = categoriesArray.map((category) => {
-    category = category.toUpperCase();
-    category = <div>{category}</div>;
-    return category;
-  });
+  const playerNamesContent = playerNames.map((player) => <div>{player}</div>);
 
   return (
     <Fragment>
-      <div className={classes.category}>{categoriesContent}</div>
-      <div className={classes.values}>
-        <ul>{statsContent}</ul>
+      <div className={classes.stats}>
+        <div className={classes.player}>{playerNamesContent}</div>
+        <div className={classes.values}>
+          <ul>{statsContent}</ul>
+        </div>
       </div>
     </Fragment>
   );
