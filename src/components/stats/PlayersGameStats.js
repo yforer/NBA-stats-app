@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import classes from "./PlayersGameStats.module.css";
 import PlayersGameStatsList from "./PlayersGameStatsList";
-import { separatePlayersToTeams } from "../../services/teamGameStatsService";
 
 const PlayersGameStats = (props) => {
   const gameStats = props.gameStats;

@@ -12,11 +12,9 @@ const GameStats = (props) => {
   const gameInfo = useSelector((state) => state.stats.gameInfo);
   const [gameStats, setGameStats] = useState();
   const [isLoading, setIsLoading] = useState(false);
-
   const teamGameStatsChosen = useSelector(
     (state) => state.stats.teamGameStatsChosen
   );
-
   const playersGameStatsChosen = useSelector(
     (state) => state.stats.playersGameStatsChosen
   );
