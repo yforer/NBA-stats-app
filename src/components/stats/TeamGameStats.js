@@ -1,22 +1,11 @@
 import classes from "./TeamGameStats.module.css";
 import { useSelector } from "react-redux";
 import TeamGameStatsList from "./TeamGameStatsList";
-import {
-  playersToTeamStats,
-  separatePlayersToTeams,
-} from "../../services/teamGameStatsService";
+
 
 const TeamGameStats = (props) => {
-  const gameStats = props.gameStats.data;
+  const gameStats = props.gameStats;
   const gameInfo = useSelector((state) => state.stats.gameInfo);
-
-  const homeTeamStats = playersToTeamStats(
-    separatePlayersToTeams(gameStats, gameInfo.homeTeam)
-  );
-
-  const visitorTeamStats = playersToTeamStats(
-    separatePlayersToTeams(gameStats, gameInfo.visitorTeam)
-  );
 
   return (
     <div className={classes.container}>
@@ -29,8 +18,7 @@ const TeamGameStats = (props) => {
       <div className={classes.stats}>
         <ul>
           <TeamGameStatsList
-            homeTeamStats={homeTeamStats}
-            visitorTeamStats={visitorTeamStats}
+            gameStats={gameStats}
           />
         </ul>
       </div>

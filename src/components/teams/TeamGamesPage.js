@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getSeasonTeamGamesAPI } from "../../services/BallDontLieAPICalls";
+import { getSeasonTeamGamesAPI } from "../../services/BallDontLieAPIClient";
 import GamesList from "../games/GamesList";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { teamsLogos } from "./TeamsLogos";

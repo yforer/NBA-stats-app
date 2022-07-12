@@ -1,16 +1,10 @@
 import { Fragment } from "react";
-import {
-  formatAndSortPlayersStats,
-  createPlayerNamesArray,
-  createCategeriesArray,
-} from "../../services/playersGameStatsService";
-import stats from "../../store/stats";
 import classes from "./PlayersGameStatsList.module.css";
 
 const PlayersGameStatsList = (props) => {
-  const formattedPlayersStats = formatAndSortPlayersStats(props.chosenTeam);
-  const playerNames = createPlayerNamesArray(formattedPlayersStats);
-  const categories = createCategeriesArray(formattedPlayersStats);
+  const formattedPlayersStats = props.gameStats;
+  const playerNames = props.playerNames;
+  const categories = props.categories;
 
   const createContent = (playersStats, categoriesArray) => {
     const dataContent = playersStats.map((player) => (
@@ -45,7 +39,7 @@ const PlayersGameStatsList = (props) => {
       </li>
     );
 
-    const mergeArrays = dataContent.unshift(categoriesContent);
+    dataContent.unshift(categoriesContent);
     return dataContent;
   };
 

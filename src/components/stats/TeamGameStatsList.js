@@ -1,12 +1,8 @@
 import { Fragment } from "react";
-import { mergeTeamsStatsObjects } from "../../services/teamGameStatsService";
 import classes from "./TeamGameStats.module.css";
 
 const TeamGameStatsList = (props) => {
-  const allTeamsStatsArray = mergeTeamsStatsObjects(
-    props.homeTeamStats,
-    props.visitorTeamStats
-  );
+  const allTeamsStatsArray = props.gameStats;
 
   const content = allTeamsStatsArray.map((stat) => (
     <li key={stat.category} className={classes.list}>

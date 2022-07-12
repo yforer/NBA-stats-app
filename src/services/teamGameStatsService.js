@@ -1,7 +1,9 @@
+import { getPlayersGameStatsAPI } from "./BallDontLieAPIClient";
+
 export const separatePlayersToTeams = (gameStats, teamFullName) =>
   gameStats.filter((player) => player.team.full_name === teamFullName);
 
-export const playersToTeamStats = (teamPlayersStats) => {
+const playersToTeamStats = (teamPlayersStats) => {
   const teamGameStats = teamPlayersStats.reduce((total, item) => {
     Object.keys(item).forEach((key) => {
       total[key] = (total[key] || 0) + item[key];
@@ -28,7 +30,7 @@ export const playersToTeamStats = (teamPlayersStats) => {
   return teamGameStats;
 };
 
-export const mergeTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
+const mergeTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
   const homeTeamStatsArray = Object.entries(homeTeamStats);
   const visitorTeamStatsArray = Object.entries(visitorTeamStats);
 
@@ -40,6 +42,27 @@ export const mergeTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
         visitorTeamValue: visitorTeamStatsArray[index][1],
       })
   );
-
   return allTeamsStats;
+};
+
+export const getFormattedTeamStatsData = async (
+  homeTeamName,
+  visitorTeamName,
+  seasonYear,
+  gameId
+) => {
+  const data = await getPlayersGameStatsAPI(seasonYear, gameId);
+  const gameStats = data.data;
+  const homeTeamGameStats = playersToTeamStats(
+    separatePlayersToTeams(gameStats, homeTeamName)
+  );
+  const visitorTeamGameStats = playersToTeamStats(
+    separatePlayersToTeams(gameStats, visitorTeamName)
+  );
+  const mergedTeamsStats = mergeTeamsStatsObjects(
+    homeTeamGameStats,
+    visitorTeamGameStats
+  );
+
+  return mergedTeamsStats;
 };

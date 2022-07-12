@@ -18,6 +18,7 @@
 }
 
 .nav a {
+  display: inline;
   position: absolute;
   text-decoration: none;
   background-color: var(--background-primary-color);

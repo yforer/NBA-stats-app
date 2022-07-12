@@ -1,4 +1,7 @@
-export const formatAndSortPlayersStats = (playersStats) => {
+import { getPlayersGameStatsAPI } from "./BallDontLieAPIClient";
+import { separatePlayersToTeams } from "./teamGameStatsService";
+
+const formatAndSortPlayersStats = (playersStats) => {
   const formattedPlayersStats = playersStats.map(
     (player) =>
       (player = {
@@ -33,14 +36,43 @@ export const formatAndSortPlayersStats = (playersStats) => {
   return sortedPlayersStats;
 };
 
-export const createPlayerNamesArray = (playersStats) => {
+const createPlayerNamesArray = (playersStats) => {
   const namesArr = playersStats.map((player) => player.name);
-  const add = namesArr.unshift("NAME");
+  namesArr.unshift("NAME");
   return namesArr;
 };
 
-export const createCategeriesArray = (playersStats) => {
+const createCategeriesArray = (playersStats) => {
   const categoriesArr = Object.keys(playersStats[0]);
-  const cutNameCategory = categoriesArr.shift();
+  categoriesArr.shift();
   return categoriesArr;
+};
+
+export const getFormattedPlayersStats = async (
+  homeTeamName,
+  visitorTeamName,
+  seasonYear,
+  gameId
+) => {
+  const data = await getPlayersGameStatsAPI(seasonYear, gameId);
+  const gameStats = data.data;
+  const homeTeamPlayersStats = formatAndSortPlayersStats(
+    separatePlayersToTeams(gameStats, homeTeamName)
+  );
+  const homeTeamPlayersArray = createPlayerNamesArray(homeTeamPlayersStats);
+  const visitorTeamPlayersStats = formatAndSortPlayersStats(
+    separatePlayersToTeams(gameStats, visitorTeamName)
+  );
+  const visitorTeamPlayersArray = createPlayerNamesArray(
+    visitorTeamPlayersStats
+  );
+  const categoriesArray = createCategeriesArray(homeTeamPlayersStats);
+
+  return {
+    homeTeamPlayersStats: homeTeamPlayersStats,
+    visitorTeamPlayersStats: visitorTeamPlayersStats,
+    homeTeamPlayersArray: homeTeamPlayersArray,
+    visitorTeamPlayersArray: visitorTeamPlayersArray,
+    categoriesArray: categoriesArray,
+  };
 };
