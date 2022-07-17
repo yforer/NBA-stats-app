@@ -2,7 +2,7 @@
   position: relative;
   margin: 24px;
   background-color: transparent;
-  box-shadow: 0 10px 10px 0 rgb(97, 20, 20);
+  box-shadow: 0 10px 10px 0 var(--background-secondary-color);
   border-radius: 16px;
   border: 2px solid white;
   transition: background-color 0.3s;
@@ -37,5 +37,5 @@
 }
 
 .team:hover {
-  background-color: white;
+  background-color: var(--text-primary-color);
 }

@@ -1,9 +1,9 @@
 .list {
   position: relative;
-  background-color: #08085e;
+  background-color: var(--background-primary-color);
   border-radius: 24px;
   margin-bottom: 24px;
-  border: 2px solid white;
+  border: 2px solid var(--text-primary-color);
 }
 
 .game {
@@ -16,7 +16,7 @@
   text-align: center;
   padding: 0;
   max-width: min-content;
-  color: #6d76be;
+  color: var(--text-secondary-color);
 }
 
 .data {
@@ -24,18 +24,18 @@
   align-items: center;
   justify-content: center;
   margin-left: 15%;
-  color: #6d76be;
+  color: var(--text-secondary-color);
 }
 
 .list button {
   padding: 4px;
   border-bottom: none;
-  border-top: 1px dotted white;
+  border-top: 1px dotted var(--text-primary-color);
   border-left: none;
   border-right: none;
 
   cursor: pointer;
-  color: #6d76be;
+  color: var(--text-secondary-color);
   background-color: transparent;
   width: 50%;
   /* box-shadow: 0 3px 3px 0 rgb(220, 212, 212); */
@@ -43,5 +43,5 @@
 }
 
 .list button:hover {
-  color: white;
+  color: var(--text-primary-color);
 }

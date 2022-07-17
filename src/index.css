@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
+:root {
+  --background-primary-color: #08085e;
+  --background-secondary-color: #1f277f;
+  --text-primary-color: white;
+  --text-secondary-color: rgb(109 118 190);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,7 +17,7 @@ html {
 
 body {
   margin: 0;
-  background-color: #08085e;
+  background-color: var(--background-primary-color);
   z-index: -1;
 }
 

@@ -1,6 +1,6 @@
 import { teamsLogos } from "../teams/TeamsLogos";
 import classes from "./GameItem.module.css";
-import TeamGameItem from "./TeamGameItem";
+import HomeTeamGameItem from "./HomeTeamGameItem";
 import AwayTeamGameItem from "./AwayTeamGameItem";
 import { useDispatch } from "react-redux";
 import { statsActions } from "../../store/stats";
@@ -35,7 +35,7 @@ const GameItem = (props) => {
     dispatch(statsActions.teamGameStatsChosenHandler());
   };
 
-  const playersStatsHandler = (event) => {
+  const playersStatsHandler = () => {
     dispatch(statsActions.showStatsHandler());
     dispatch(
       statsActions.gameChosenHandler({
@@ -53,7 +53,7 @@ const GameItem = (props) => {
       <div className={classes.game}>
         <div className={classes.date}>{formattedDate}</div>
         <div className={classes.data}>
-          <TeamGameItem team={homeTeam} score={props.homeTeamScore} />
+          <HomeTeamGameItem team={homeTeam} score={props.homeTeamScore} />
           <AwayTeamGameItem team={visitorTeam} score={props.visitorTeamScore} />
         </div>
       </div>

@@ -1,20 +1,22 @@
-.category {
-  display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  overflow: hidden;
-}
-
-.category div {
-  text-align: center;
-  width: 90px;
-}
-
 .stats {
+  display: flex;
+}
+
+.player {
+  min-width: max-content;
+}
+
+.player div {
+  padding: 8px 0 8px;
+  margin-left: 8px;
+}
+
+.player div:first-child {
+  text-align: center;
 }
 
 .values {
-  max-height: 500px;
-  overflow: scroll;
+  overflow-x: scroll;
 }
 
 .values ul {
@@ -33,4 +35,21 @@
 .values ul li div {
   text-align: center;
   width: 90px;
+}
+
+.values::-webkit-scrollbar {
+  height: 8px;
+}
+
+.values::-webkit-scrollbar-button {
+  display: none;
+}
+
+.values::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 8px;
+}
+.values::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
 }
