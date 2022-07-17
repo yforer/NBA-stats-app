@@ -1,5 +1,14 @@
+import { Fragment } from "react";
+import LeadingPlayers from "../components/players/LeadingPlayers";
+import SearchPlayers from "../components/players/SearchPlayers";
+
 const PlayersLanding = () => {
-  return <p>Players landing page</p>
-}
+  return (
+    <Fragment>
+      <SearchPlayers />
+      <LeadingPlayers />
+    </Fragment>
+  );
+};
 
 export default PlayersLanding;

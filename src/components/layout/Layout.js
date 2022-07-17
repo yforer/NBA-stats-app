@@ -9,9 +9,11 @@ const Layout = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.header}>
-        <MainHeader />
-        {isSeasonChosen && <MainNavigation />}
+      <div className={classes.container}>
+        <div className={classes.header}>
+          <MainHeader />
+          {isSeasonChosen && <MainNavigation />}
+        </div>
       </div>
       <main className={classes.main}>{props.children}</main>
     </Fragment>

@@ -1,5 +1,5 @@
 .main {
-  margin: 5rem auto;
+  margin: 16rem auto;
   width: 90%;
   max-width: 1280px;
 }
@@ -8,4 +8,19 @@
   max-width: 1280px;
   margin: auto;
   margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  z-index: 10;
+}
+
+.container {
+  height: 170px;
+  background-color: var(--background-primary-color);
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
