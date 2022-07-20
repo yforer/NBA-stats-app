@@ -43,3 +43,44 @@ export const getSeasonTeamGamesAPI = async (seasonYear, numId) => {
 
   return sortedDataByDates;
 };
+
+export const getPlayersSearchResultsAPI = async (playerName) => {
+  const response = await fetch(
+    `https://www.balldontlie.io/api/v1/players?search=${playerName}&per_page=100`
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch players search list");
+  }
+
+  const data = await response.json();
+
+  if (data.meta.total_pages > 1) {
+    const responsePage2 = await fetch(
+      `https://www.balldontlie.io/api/v1/players?search=${playerName}&per_page=100&page=2`
+    );
+
+    if (!responsePage2.ok) {
+      throw new Error("Failed to fetch players search list (page 2)");
+    }
+
+    const dataPage2 = await responsePage2.json();
+    data.data.push(...dataPage2.data);
+  }
+
+  return data;
+};
+
+export const getPlayerProfileAPI = async (playerName) => {
+  const response = await fetch(
+    `https://www.balldontlie.io/api/v1/players?search=${playerName}&per_page=100`
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch player profile");
+  }
+
+  const data = await response.json();
+
+  return data;
+};
