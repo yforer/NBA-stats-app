@@ -4,10 +4,10 @@ import Layout from "./components/layout/Layout";
 import PlayersLanding from "./pages/PlayersLanding";
 import TeamsLanding from "./pages/TeamsLanding";
 import TeamGamesPage from "./components/teams/TeamGamesPage";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import StatsPopup from "./components/stats/StatsPopup";
-import { useDispatch, useSelector } from "react-redux";
-import statsActions from "./store/stats";
+import { useSelector } from "react-redux";
+import PlayerProfilePage from "./components/players/PlayerProfilePage";
 
 function App() {
   let statsIsShowen = useSelector((state) => state.stats.statsIsShowen);
@@ -21,6 +21,7 @@ function App() {
           <Route path="/players" element={<PlayersLanding />} />
           <Route path="/teams" element={<TeamsLanding />} />
           <Route path="/teams/:teamId" element={<TeamGamesPage />} />
+          <Route path="/players/:playerName" element={<PlayerProfilePage />} />
         </Routes>
       </Layout>
     </Fragment>
