@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getSeasonTeamGamesAPI } from "../../services/BallDontLieAPIClient";
+import { getSeasonTeamGames } from "../../services/teamGamesPageService";
 import GamesList from "../games/GamesList";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { teamsLogos } from "./TeamsLogos";
@@ -19,7 +19,7 @@ const TeamGamesPage = () => {
     try {
       setIsLoading(true);
 
-      const sortedDataByDates = await getSeasonTeamGamesAPI(
+      const sortedDataByDates = await getSeasonTeamGames(
         seasonYear,
         team.numId
       );

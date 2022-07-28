@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 :root {
-  --background-primary-color: #08085e;
-  --background-secondary-color: #1f277f;
+  --background-primary-color: rgb(8, 8, 94);
+  --background-secondary-color: rgb(31, 39, 127);
   --text-primary-color: white;
-  --text-secondary-color: rgb(109 118 190);
+  --text-secondary-color: rgb(113, 122, 194);
+  --text-tertiary-color: rgb(255, 152, 32);
+  --text-quaternary-color: rgb(239, 29, 64);
 }
 
 * {

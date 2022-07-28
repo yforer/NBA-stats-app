@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 const MainHeader = (props) => {
   const seasonInputRef = useRef();
   const dispatch = useDispatch();
-  const season = useSelector((state) => state.season.season);
+  const isSeasonChosen = useSelector((state) => state.season.isSeasonChosen);
   let navigate = useNavigate("/");
 
   const submitSeasonHandler = (event) => {
@@ -18,11 +18,15 @@ const MainHeader = (props) => {
     navigate("/");
   };
 
+  const toGomePageHandler = () => {
+    dispatch(seasonActions.init());
+  };
+
   return (
     <Fragment>
       <header className={classes.header}>
         <div className={classes.logo}>
-          <Link to="/">
+          <Link to="/" onClick={toGomePageHandler}>
             <img src={nbaLogo}></img>
           </Link>
         </div>

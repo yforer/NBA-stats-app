@@ -5,7 +5,7 @@ import PlayersLanding from "./pages/PlayersLanding";
 import TeamsLanding from "./pages/TeamsLanding";
 import TeamGamesPage from "./components/teams/TeamGamesPage";
 import { Fragment } from "react";
-import StatsPopup from "./components/stats/StatsPopup";
+import StatsPopup from "./components/team-stats/StatsPopup";
 import { useSelector } from "react-redux";
 import PlayerProfilePage from "./components/players/PlayerProfilePage";
 
