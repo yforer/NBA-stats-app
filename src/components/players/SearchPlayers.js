@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./SearchPlayers.module.css";
 import PlayersSearchList from "./PlayersSearchList";
-import { getPlayersSearchResultsAPI } from "../../services/BallDontLieAPIClient";
+import { getPlayersSearchResults } from "../../services/searchPlayerService";
 import LoadingDots from "../UI/LoadingDots";
 
 const SearchPlayers = () => {
@@ -15,7 +15,7 @@ const SearchPlayers = () => {
       try {
         if (inputTextIsValid) {
           setIsLoading(true);
-          const data = await getPlayersSearchResultsAPI(inputText);
+          const data = await getPlayersSearchResults(inputText);
           setPlayersSearchList(data);
           setIsLoading(false);
         }

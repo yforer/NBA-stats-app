@@ -1,22 +1,44 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { playerActions } from "../../store/player";
 import classes from "./PlayerProfilePage.module.css";
-import { getPlayerProfileAPI } from "../../services/BallDontLieAPIClient";
-import PlayerGeneralData from "./PlayerGeneralData";
-import PlayerStatsOptions from "./PlayerStatsOptions";
+import PlayerSeasonAverages from "./PlayerSeasonAverages";
+import PlayerStatsByGame from "./PlayerStatsByGame";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import { getPlayerProfileData } from "../../services/playersProfileService";
+import { useNavigate } from "react-router-dom";
+
+const svgDir = require.context("../../assets");
 
 const PlayerProfilePage = () => {
+  const dispatch = useDispatch();
   const [playerData, setPlayerData] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const seasonYear = useSelector((state) => state.season.season);
   const params = useParams();
   const playerName = params.playerName.replace("-", " ");
+  const navigate = useNavigate();
 
-  const getPlayerData = useCallback(async (name) => {
+  const backToPlayersHandler = () => {
+    navigate("/players");
+    dispatch(playerActions.initPlayerData());
+  };
+
+  const getPlayerData = useCallback(async (playerName, seasonYear) => {
     try {
       setIsLoading(true);
-      const data = await getPlayerProfileAPI(name);
-      setPlayerData(data.data[0]);
+      const data = await getPlayerProfileData(playerName, seasonYear);
+      setPlayerData(data);
+
+      dispatch(
+        playerActions.savePlayerData({
+          name: playerName,
+          team: data.playerSeasonGamesStats[0].team.abbreviation.toLowerCase(),
+        })
+      );
+      dispatch(playerActions.savePlayerAverages(data.playerSeasonAverages));
+      dispatch(playerActions.savePlayerGamesStats(data.playerSeasonGamesStats));
     } catch (error) {
       console.log(error);
     }
@@ -24,8 +46,8 @@ const PlayerProfilePage = () => {
   }, []);
 
   useEffect(() => {
-    getPlayerData(playerName);
-  }, [getPlayerData]);
+    getPlayerData(playerName, seasonYear);
+  }, [getPlayerData, playerName, seasonYear]);
 
   return (
     <Fragment>
@@ -36,8 +58,26 @@ const PlayerProfilePage = () => {
       )}
       {!isLoading && playerData && (
         <div className={classes.container}>
-          <PlayerGeneralData playerData={playerData} />
-          <PlayerStatsOptions playerData={playerData} />
+          <div className={classes.info}>
+            <button
+              onClick={backToPlayersHandler}
+            >{`< Back to players page`}</button>
+            <h1>{playerName}</h1>
+            <img
+              src={svgDir(
+                `./${playerData.playerSeasonGamesStats[0].team.abbreviation.toLowerCase()}.svg`
+              )}
+              alt={playerData.playerSeasonGamesStats[0].team.full_name}
+            ></img>
+          </div>
+          <div className={classes.sections}>
+            <PlayerSeasonAverages
+              playerAverages={playerData.playerSeasonAverages}
+            />
+            <PlayerStatsByGame
+              playerGamesStats={playerData.playerSeasonGamesStats}
+            />
+          </div>
         </div>
       )}
     </Fragment>

@@ -10,6 +10,8 @@ const initialStatsState = {
   },
   teamGameStatsChosen: false,
   playersGameStatsChosen: false,
+  playerAveragesStatsChosen: false,
+  singlePlayerGameStatsChosen: false,
 };
 
 const statsSlice = createSlice({
@@ -36,9 +38,17 @@ const statsSlice = createSlice({
     playersGameStatsChosenHandler(state) {
       state.playersGameStatsChosen = true;
     },
+    playerAveragesStatsChosenHandler(state) {
+      state.playerAveragesStatsChosen = true;
+    },
+    singlePlayerGameStatsChosenHandler(state) {
+      state.singlePlayerGameStatsChosen = true;
+    },
     initiateStatsChosen(state) {
       state.teamGameStatsChosen = false;
       state.playersGameStatsChosen = false;
+      state.playerAveragesStatsChosen = false;
+      state.singlePlayerGameStatsChosen = false;
       state.gameInfo = initialStatsState.gameInfo;
     },
   },

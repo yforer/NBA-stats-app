@@ -7,8 +7,8 @@ const PlayersGameStatsList = (props) => {
   const categories = props.categories;
 
   const createContent = (playersStats, categoriesArray) => {
-    const dataContent = playersStats.map((player) => (
-      <li>
+    const dataContent = playersStats.map((player, index) => (
+      <li key={player.index}>
         <div>{player.min}</div>
         <div>{player.pts}</div>
         <div>{player.ast}</div>

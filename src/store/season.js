@@ -17,6 +17,9 @@ const seasonSlice = createSlice({
         state.isSeasonChosen = true;
       }
     },
+    init(state) {
+      state.isSeasonChosen = false;
+    },
   },
 });
 

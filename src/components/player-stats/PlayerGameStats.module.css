@@ -1,0 +1,77 @@
+.container {
+  margin: auto;
+  max-width: 600px;
+  max-height: 800px;
+  background-color: var(--background-primary-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.container ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container ul li div {
+  padding: 8px 64px 8px;
+  color: var(--text-primary-color);
+}
+
+.container h2 {
+  color: var(--text-primary-color);
+  text-align: center;
+}
+
+.headline {
+  color: var(--text-primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.headline p {
+  padding: 0 24px;
+  width: 100%;
+  color: var(--text-secondary-color);
+  text-align: center;
+}
+
+.headline button {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.game {
+  display: flex;
+  border-bottom: 2px solid var(--text-secondary-color);
+  margin-bottom: 8px;
+}
+
+.container ul::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container ul::-webkit-scrollbar-button {
+  display: none;
+}
+
+.container ul::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 8px;
+}
+.container ul::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}
