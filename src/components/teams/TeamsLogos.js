@@ -1,157 +1,212 @@
 export const teamsLogos = [
-  { name: "Atlanta Hawks", id: "atl", numId: 1, conferens: "East" },
+  {
+    name: "Atlanta Hawks",
+    id: "atl",
+    numId: 1,
+    conferens: "East",
+    logoPath: "../../assests/atl.png",
+  },
   {
     name: "Milwaukee Bucks",
-
     id: "mil",
     numId: 17,
     conferens: "East",
+    logoPath: "../../assests/mil.png",
   },
-  { name: "Brooklyn Nets", id: "bkn", numId: 3, conferens: "East" },
-  { name: "Miami Heat", id: "mia", numId: 16, conferens: "East" },
+  {
+    name: "Brooklyn Nets",
+    id: "bkn",
+    numId: 3,
+    conferens: "East",
+    logoPath: "../../assests/bkn.png",
+  },
+  {
+    name: "Miami Heat",
+    id: "mia",
+    numId: 16,
+    conferens: "East",
+    logoPath: "../../assests/mia.png",
+  },
   {
     name: "Cleveland Cavaliers",
-
     id: "cle",
     numId: 6,
     conferens: "East",
+    logoPath: "../../assests/cle.png",
   },
   {
     name: "Toronto Raptors",
-
     id: "tor",
     numId: 28,
     conferens: "East",
+    logoPath: "../../assests/tor.png",
   },
   {
     name: "Philadelphia 76ers",
-
     id: "phi",
     numId: 23,
     conferens: "East",
+    logoPath: "../../assests/phi.png",
   },
-  { name: "Boston Celtics", id: "bos", numId: 2, conferens: "East" },
+  {
+    name: "Boston Celtics",
+    id: "bos",
+    numId: 2,
+    conferens: "East",
+    logoPath: "../../assests/bos.png",
+  },
   {
     name: "Washington Wizards",
     id: "was",
     numId: 30,
     conferens: "East",
+    logoPath: "../../assests/was.png",
   },
-  { name: "Orlando Magic", id: "orl", numId: 22, conferens: "East" },
+  {
+    name: "Orlando Magic",
+    id: "orl",
+    numId: 22,
+    conferens: "East",
+    logoPath: "../../assests/orl.png",
+  },
   {
     name: "Charlotte Hornets",
-
     id: "cha",
     numId: 4,
     conferens: "East",
+    logoPath: "../../assests/cha.png",
   },
   {
     name: "Detroit Pistons",
-
     id: "det",
     numId: 9,
     conferens: "East",
+    logoPath: "../../assests/det.png",
   },
   {
     name: "Indiana Pacers",
-
     id: "ind",
     numId: 12,
     conferens: "East",
+    logoPath: "../../assests/ind.png",
   },
-  { name: "Chicago Bulls", id: "chi", numId: 5, conferens: "East" },
+  {
+    name: "Chicago Bulls",
+    id: "chi",
+    numId: 5,
+    conferens: "East",
+    logoPath: "../../assests/chi.png",
+  },
   {
     name: "New York Knicks",
-
     id: "nyk",
     numId: 20,
     conferens: "East",
+    logoPath: "../../assests/nyk.png",
   },
   {
     name: "Golden State Warriors",
-
     id: "gsw",
     numId: 10,
     conferens: "West",
+    logoPath: "../../assests/gsw.png",
   },
   {
     name: "San Antonio Spurs",
-
     id: "sas",
     numId: 27,
     conferens: "West",
+    logoPath: "../../assests/sas.png",
   },
   {
     name: "Los Angeles Lakers",
-
     id: "lal",
     numId: 14,
     conferens: "West",
+    logoPath: "../../assests/lal.png",
   },
   {
     name: "Los Angeles Clippers",
-
     id: "lac",
     numId: 13,
     conferens: "West",
+    logoPath: "../../assests/lac.png",
   },
   {
     name: "Dallas Mavericks",
-
     id: "dal",
     numId: 7,
     conferens: "West",
+    logoPath: "../../assests/dal.png",
   },
   {
     name: "Houston Rockets",
-
     id: "hou",
     numId: 11,
     conferens: "West",
+    logoPath: "../../assests/hou.png",
   },
   {
     name: "Sacramento Kings",
-
     id: "sac",
     numId: 26,
     conferens: "West",
+    logoPath: "../../assests/sac.png",
   },
-  { name: "Denver Nuggets", id: "den", numId: 8, conferens: "West" },
+  {
+    name: "Denver Nuggets",
+    id: "den",
+    numId: 8,
+    conferens: "West",
+    logoPath: "../../assests/den.png",
+  },
   {
     name: "New Orleans Pelicans",
-
     id: "nop",
     numId: 19,
     conferens: "West",
+    logoPath: "../../assests/nop.png",
   },
-  { name: "Utah Jazz", id: "uta", numId: 29, conferens: "West" },
-  { name: "Phoenix Suns", id: "phx", numId: 24, conferens: "West" },
+  {
+    name: "Utah Jazz",
+    id: "uta",
+    numId: 29,
+    conferens: "West",
+    logoPath: "../../assests/uta.png",
+  },
+  {
+    name: "Phoenix Suns",
+    id: "phx",
+    numId: 24,
+    conferens: "West",
+    logoPath: "../../assests/phx.png",
+  },
   {
     name: "Portland Trail Blazers",
-
     id: "por",
     numId: 25,
     conferens: "West",
+    logoPath: "../../assests/por.png",
   },
   {
     name: "Minnesota Timberwolves",
-
     id: "min",
     numId: 18,
     conferens: "West",
+    logoPath: "../../assests/min.png",
   },
   {
     name: "Oklahoma City Thunder",
-
     id: "okc",
     numId: 21,
     conferens: "West",
+    logoPath: "../../assests/okc.png",
   },
   {
     name: "Memphis Grizzlies",
-
     id: "mem",
     numId: 15,
     conferens: "West",
+    logoPath: "../../assests/mem.png",
   },
 ];

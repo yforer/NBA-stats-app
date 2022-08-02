@@ -9,25 +9,25 @@ const PlayersGameStatsList = (props) => {
   const createContent = (playersStats, categoriesArray) => {
     const dataContent = playersStats.map((player, index) => (
       <li key={player.index}>
-        <div>{player.min}</div>
-        <div>{player.pts}</div>
-        <div>{player.ast}</div>
-        <div>{player.reb}</div>
-        <div>{player.blk}</div>
-        <div>{player.stl}</div>
-        <div>{player.dreb}</div>
-        <div>{player.oreb}</div>
-        <div>{player.fg3a}</div>
-        <div>{player.fg3m}</div>
-        <div>{player.fg3_pct}</div>
-        <div>{player.fga}</div>
-        <div>{player.fgm}</div>
-        <div>{player.fg_pct}</div>
-        <div>{player.fta}</div>
-        <div>{player.ftm}</div>
-        <div>{player.ft_pct}</div>
-        <div>{player.pf}</div>
-        <div>{player.turnover}</div>
+        <p>{player.min}</p>
+        <p>{player.pts}</p>
+        <p>{player.ast}</p>
+        <p>{player.reb}</p>
+        <p>{player.blk}</p>
+        <p>{player.stl}</p>
+        <p>{player.dreb}</p>
+        <p>{player.oreb}</p>
+        <p>{player.fg3a}</p>
+        <p>{player.fg3m}</p>
+        <p>{player.fg3_pct}</p>
+        <p>{player.fga}</p>
+        <p>{player.fgm}</p>
+        <p>{player.fg_pct}</p>
+        <p>{player.fta}</p>
+        <p>{player.ftm}</p>
+        <p>{player.ft_pct}</p>
+        <p>{player.pf}</p>
+        <p>{player.turnover}</p>
       </li>
     ));
 

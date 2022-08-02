@@ -1,8 +1,10 @@
 import classes from "./TeamSeasonStats.module.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { teamsLogos } from "./TeamsLogos";
+import LogoComp from "../UI/LogoComp";
 
 const TeamSeasonStats = (props) => {
+  const navigate = useNavigate();
   const params = useParams();
   const [team] = teamsLogos.filter((team) => team.id === params.teamId);
 
@@ -22,14 +24,28 @@ const TeamSeasonStats = (props) => {
         game.home_team_score < game.visitor_team_score)
   ).length;
 
+  const backToAllTeamsHndler = () => {
+    navigate("/teams");
+  };
+
   return (
     <div className={classes.stats}>
-      <h1 className="centered">{`${team.name} season games`}</h1>
-      <div
-        className={classes.record}
-      >{`regular season record:   ${regularSeasonWins}W - ${
-        regularSeasonGames.length - regularSeasonWins
-      }L`}</div>
+      <div className={classes.info}>
+        <LogoComp id={team.id} />
+        <div className={classes.headline}>
+          <button
+            onClick={backToAllTeamsHndler}
+          >{`< Back to all teams`}</button>
+          <h1>{`${team.name}`}</h1>
+        </div>
+      </div>
+      <div className={classes.record}>
+        <LogoComp id="landing-drow" />
+        <p>Regular Season Record:</p>
+        <h2>{`${regularSeasonWins}W - ${
+          regularSeasonGames.length - regularSeasonWins
+        }L`}</h2>
+      </div>
     </div>
   );
 };

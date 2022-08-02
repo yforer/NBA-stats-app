@@ -3,6 +3,7 @@ import classes from "./SearchPlayers.module.css";
 import PlayersSearchList from "./PlayersSearchList";
 import { getPlayersSearchResults } from "../../services/searchPlayerService";
 import LoadingDots from "../UI/LoadingDots";
+import { GoSearch } from "react-icons/go";
 
 const SearchPlayers = () => {
   const [playersSearchList, setPlayersSearchList] = useState();
@@ -33,19 +34,23 @@ const SearchPlayers = () => {
   };
 
   return (
-    <div className={classes.search}>
-      <h2>search player by name</h2>
-      <input
-        type="text"
-        placeholder="player name"
-        onChange={onChangeHandler}
-      ></input>
-      <ul>
+    <div className={classes.headline}>
+      <h1>Players</h1>
+      <div className={classes.search}>
+        <div className={classes.bar}>
+          <GoSearch size={20} />
+          <input
+            type="text"
+            placeholder={`Search for players`}
+            onChange={onChangeHandler}
+          ></input>
+        </div>
+
         {isLoading && <LoadingDots />}
         {!isLoading && inputTextIsValid && playersSearchList && (
           <PlayersSearchList playersList={playersSearchList} />
         )}
-      </ul>
+      </div>
     </div>
   );
 };

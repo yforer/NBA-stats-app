@@ -3,16 +3,16 @@
   justify-content: space-between;
 }
 
-.team h2 {
-  color: var(--text-primary-color);
-  padding: 24px;
+.team h3 {
+  color: var(--text-secondary-color);
+  padding: 12px;
 }
 
 .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 24px 0;
+  padding: 0;
 }
 
 .logo img {
@@ -20,8 +20,8 @@
   height: 50%;
 }
 
-.logo h3 {
-  color: var(--text-primary-color);
+.logo p {
+  color: var(--text-secondary-color);
   padding: 0;
   margin: 0;
   text-align: center;

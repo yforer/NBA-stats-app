@@ -1,8 +1,13 @@
+import player from "../store/player";
 import { getPlayersGameStatsAPI } from "./BallDontLieAPIClient";
 import { separatePlayersToTeams } from "./teamGameStatsService";
 
 const formatAndSortPlayersStats = (playersStats) => {
-  const formattedPlayersStats = playersStats.map(
+  const omittedPlayersNotPlayed = playersStats.filter(
+    (player) => player.min !== null
+  );
+
+  const formattedPlayersStats = omittedPlayersNotPlayed.map(
     (player) =>
       (player = {
         name: `${player.player.first_name} ${player.player.last_name}`,

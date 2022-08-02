@@ -1,6 +1,8 @@
 import { leadingPlayersData } from "./leading-players-data";
 import { useSelector } from "react-redux";
 import classes from "./LeadingPlayers.module.css";
+import { BsArrowDownShort, BsArrowRightShort } from "react-icons/bs";
+import { GoPrimitiveDot } from "react-icons/go";
 
 const LeadingPlayers = () => {
   const seasonYear = useSelector((state) => state.season.season);
@@ -34,18 +36,33 @@ const LeadingPlayers = () => {
   );
 
   return (
-    <div className={classes.categories}>
-      <div className={classes.leaders}>
-        <h3>Point Leaders</h3>
-        <ul>{pointsLeadersContent}</ul>
-      </div>
-      <div className={classes.leaders}>
-        <h3>Rebound Leaders</h3>
-        <ul>{reboundsLeadersContent}</ul>
-      </div>
-      <div className={classes.leaders}>
-        <h3>Assist Leaders</h3>
-        <ul>{assistsLeadersContent}</ul>
+    <div className={classes.container}>
+      <h2>{`${seasonYear}-${+seasonYear + 1} Season Averages Leaders`}</h2>
+      <div className={classes.categories}>
+        <div className={classes.leaders}>
+          <div className={classes.headline}>
+            <BsArrowRightShort color="orange" size={28} />
+            <GoPrimitiveDot color="orange" size={28} />
+            <h3>Points</h3>
+          </div>
+          <ul>{pointsLeadersContent}</ul>
+        </div>
+        <div className={classes.leaders}>
+          <div className={classes.headline}>
+            <BsArrowDownShort color="orange" size={28} />
+            <GoPrimitiveDot color="orange" size={28} />
+            <h3>Rebounds</h3>
+          </div>
+          <ul>{reboundsLeadersContent}</ul>
+        </div>
+        <div className={classes.leaders}>
+          <div className={classes.headline}>
+            <GoPrimitiveDot color="orange" size={28} />
+            <BsArrowRightShort color="orange" size={28} />
+            <h3>Assists</h3>
+          </div>
+          <ul>{assistsLeadersContent}</ul>
+        </div>
       </div>
     </div>
   );

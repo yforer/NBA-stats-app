@@ -1,22 +1,17 @@
 import classes from "./GameTeamInfo.module.css";
 import { teamsLogos } from "../teams/TeamsLogos";
-const svgDir = require.context("../../assets");
+import LogoComp from "../UI/LogoComp";
 
 const GameHomeTeamInfo = (props) => {
   return (
     <div className={classes.team}>
       <div className={classes.logo}>
-        <img
-          src={svgDir(
-            `./${
-              teamsLogos.find((team) => team.name === props.homeTeam).id
-            }.svg`
-          )}
-          alt={props.homeTeam}
-        ></img>
-        <h3>{props.homeTeam}</h3>
+        <LogoComp
+          id={teamsLogos.find((team) => team.name === props.homeTeam).id}
+        />
+        <p>{props.homeTeam}</p>
       </div>
-      <h2>{props.score}</h2>
+      <h3>{props.score}</h3>
     </div>
   );
 };

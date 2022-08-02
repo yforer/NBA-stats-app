@@ -51,14 +51,16 @@ const GameItem = (props) => {
   return (
     <li className={classes.list}>
       <div className={classes.game}>
-        <div className={classes.date}>{formattedDate}</div>
+        <p className={classes.date}>{formattedDate}</p>
         <div className={classes.data}>
           <HomeTeamGameItem team={homeTeam} score={props.homeTeamScore} />
           <AwayTeamGameItem team={visitorTeam} score={props.visitorTeamScore} />
         </div>
+        <div className={classes.options}>
+          <button onClick={teamsStatsHandler}>teams stats</button>
+          <button onClick={playersStatsHandler}>players stats</button>
+        </div>
       </div>
-      <button onClick={teamsStatsHandler}>teams stats</button>
-      <button onClick={playersStatsHandler}>players stats</button>
     </li>
   );
 };

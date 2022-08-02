@@ -31,7 +31,7 @@ const formatMinAndMaxDates = (chosenDate) => {
   return `${year}-${month}-${day}`;
 };
 
-export const formatDateForCompare = (inputDate, seasonYear) => {
+const formatDateForCompare = (inputDate, seasonYear) => {
   const date = new Date(inputDate);
   const day = date.getDate();
   let month = date.getMonth() + 1;
@@ -65,4 +65,46 @@ export const createGameLinkData = (data) => {
     minDate: minDate,
     maxDate: maxDate,
   };
+};
+
+export const filterGamesData = (
+  startDateInputRef,
+  endDateInputRef,
+  gameLinksData,
+  seasonYear
+) => {
+  let filteredGamesList;
+  if (
+    startDateInputRef.current.value.length === 10 &&
+    !endDateInputRef.current.value
+  ) {
+    filteredGamesList = gameLinksData.formattedData.filter(
+      (game) =>
+        new Date(formatDateForCompare(game.date, seasonYear)) >
+        new Date(startDateInputRef.current.value)
+    );
+  }
+  if (
+    !startDateInputRef.current.value &&
+    endDateInputRef.current.value.length === 10
+  ) {
+    filteredGamesList = gameLinksData.formattedData.filter(
+      (game) =>
+        new Date(formatDateForCompare(game.date, seasonYear)) <
+        new Date(endDateInputRef.current.value)
+    );
+  }
+  if (
+    startDateInputRef.current.value.length === 10 &&
+    endDateInputRef.current.value.length === 10
+  ) {
+    filteredGamesList = gameLinksData.formattedData.filter(
+      (game) =>
+        new Date(formatDateForCompare(game.date, seasonYear)) >
+          new Date(startDateInputRef.current.value) &&
+        new Date(formatDateForCompare(game.date, seasonYear)) <
+          new Date(endDateInputRef.current.value)
+    );
+  }
+  return filteredGamesList;
 };
