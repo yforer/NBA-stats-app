@@ -1,43 +1,51 @@
 .container {
-  border: 1px var(--text-primary-color) solid;
-  border-radius: 8px;
+  border: 2px var(--text-secondary-color) solid;
+  border-radius: 24px;
   background-color: var(--background-primary-color);
-  max-width: 800px;
+  width: 500px;
   margin: auto;
-  max-height: 600px;
+  max-height: 550px;
 }
 .info {
+  color: var(--text-primary-color);
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px var(--text-secondary-color) solid;
+  padding-bottom: 2rem;
+}
+
+.info p {
+  text-align: center;
+  margin: 0;
+}
+
+.info h3 {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+}
+
+.headers {
+  width: 100%;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 2fr;
-  padding: 16px;
-  border-bottom: 1px var(--text-primary-color) solid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: var(--text-secondary-color);
+  margin-bottom: 16px;
 }
 
-.info button {
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.date {
-  padding: 0px;
-}
 .stats {
   overflow-y: scroll;
   max-width: inherit;
-  max-height: 500px;
+  max-height: 300px;
+  color: var(--text-primary-color);
+  margin-bottom: 16px;
 }
 
-.team {
-  text-align: center;
-  font-weight: bold;
-  padding: 16px;
-}
 .stats ul {
   list-style: none;
-  width: 90%;
+  width: 100%;
   margin: auto;
   padding: 0;
 }
@@ -62,9 +70,9 @@
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 16px;
 }
 
 .list div {
-  padding: 16px;
   text-align: center;
 }

@@ -1,17 +1,18 @@
 .container {
   margin: auto;
-  max-width: 600px;
-  max-height: 800px;
+  max-width: 420px;
+  max-height: 500px;
   background-color: var(--background-primary-color);
-  border-radius: 16px;
+  border-radius: 24px;
   overflow: hidden;
+  border: 2px solid var(--text-secondary-color);
 }
 
 .container ul {
   list-style: none;
-  margin: 0;
+  margin: 16px 0 16px;
   padding: 0;
-  max-height: 500px;
+  max-height: 300px;
   overflow-y: scroll;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .container ul li div {
-  padding: 8px 64px 8px;
+  padding: 8px 48px 8px;
   color: var(--text-primary-color);
 }
 
@@ -31,19 +32,15 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid var(--text-secondary-color);
-  margin-bottom: 16px;
+  padding: 0 48px 24px;
 }
 
 .headline h2 {
-  padding: 16px;
+  margin: 0;
 }
 
-.headline button {
-  border-radius: 50%;
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-  margin-left: 8px;
+.headline h3 {
+  margin: 0;
 }
 
 .headline img {
@@ -52,7 +49,7 @@
 }
 
 .container ul::-webkit-scrollbar {
-  height: 8px;
+  width: 8px;
 }
 
 .container ul::-webkit-scrollbar-button {

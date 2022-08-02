@@ -3,8 +3,11 @@ import TeamsList from "../components/teams/TeamsList";
 
 const TeamsLanding = () => {
   return (
-    <div className={classes.teams}>
-      <TeamsList />
+    <div className={classes.container}>
+      <h1>Teams</h1>
+      <div className={classes.teams}>
+        <TeamsList />
+      </div>
     </div>
   );
 };

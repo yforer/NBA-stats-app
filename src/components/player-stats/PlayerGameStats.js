@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { formatPlayerGameData } from "../../services/singlePlayerGameStatsService";
 import GameVisitorTeamInfo from "./GameVisitorTeamImfo";
 import GameHomeTeamInfo from "./GameHomeTeamInfo";
+import CloseButton from "../UI/CloseButton";
 
 const PlayerGameStats = (props) => {
   const gameData = useSelector((state) => state.player.gameData);
@@ -26,20 +27,20 @@ const PlayerGameStats = (props) => {
   return (
     <div className={classes.container}>
       <div className={classes.headline}>
-        <button onClick={props.onClose}>X</button>
-        <p>{gameData.date}</p>
+        <CloseButton onClose={props.onClose} />
+        <h2>{`${playerData.playerName}`}</h2>
+        <p className={classes.header}>Full game stats</p>
+        <div className={classes.game}>
+          <GameHomeTeamInfo
+            homeTeam={gameData.homeTeam}
+            score={chosenGameData.game.home_team_score}
+          />
+          <GameVisitorTeamInfo
+            visitorTeam={gameData.visitorTeam}
+            score={chosenGameData.game.visitor_team_score}
+          />
+        </div>
       </div>
-      <div className={classes.game}>
-        <GameHomeTeamInfo
-          homeTeam={gameData.homeTeam}
-          score={chosenGameData.game.home_team_score}
-        />
-        <GameVisitorTeamInfo
-          visitorTeam={gameData.visitorTeam}
-          score={chosenGameData.game.visitor_team_score}
-        />
-      </div>
-      <h2>{`${playerData.playerName} full game stats`}</h2>
       <ul>{gameStatsContent}</ul>
     </div>
   );

@@ -8,8 +8,7 @@ import PlayerStatsByGame from "./PlayerStatsByGame";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { getPlayerProfileData } from "../../services/playersProfileService";
 import { useNavigate } from "react-router-dom";
-
-const svgDir = require.context("../../assets");
+import LogoComp from "../UI/LogoComp";
 
 const PlayerProfilePage = () => {
   const dispatch = useDispatch();
@@ -63,12 +62,9 @@ const PlayerProfilePage = () => {
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
             <h1>{playerName}</h1>
-            <img
-              src={svgDir(
-                `./${playerData.playerSeasonGamesStats[0].team.abbreviation.toLowerCase()}.svg`
-              )}
-              alt={playerData.playerSeasonGamesStats[0].team.full_name}
-            ></img>
+            <LogoComp
+              id={playerData.playerSeasonGamesStats[0].team.abbreviation.toLowerCase()}
+            />
           </div>
           <div className={classes.sections}>
             <PlayerSeasonAverages

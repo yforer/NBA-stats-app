@@ -1,17 +1,67 @@
 .stats {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1062px;
   background-color: var(--background-primary-color);
   margin: auto;
-  padding-bottom: 40px;
-  margin-bottom: 16px;
+  margin-bottom: 88px;
   color: var(--text-primary-color);
 }
 
 .record {
-  margin: 3rem auto;
-  text-align: center;
+  width: 18%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   color: var(--text-primary-color);
+}
+
+.record p {
+  margin: 0;
+}
+
+.record h2 {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+}
+
+.record img {
+  height: 20%;
+  width: 20%;
+}
+
+.info {
+  display: flex;
+}
+
+.info img {
+  height: 10%;
+  width: 10%;
+}
+
+.headline {
+  margin-left: 24px;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.headline h1 {
+  margin: 0;
+}
+
+.headline button {
+  padding: 0;
+  width: 150px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-quaternary-color);
+  border: none;
+  text-decoration: underline;
+  text-align: left;
 }

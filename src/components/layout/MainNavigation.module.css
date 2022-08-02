@@ -33,7 +33,7 @@
   font-size: 1.25rem;
   transition: border-bottom 0.3s;
   overflow: hidden;
-  border-bottom: 1px solid var(--background-secondary-color);
+  border-bottom: 2px solid rgb(83, 92, 164);
 }
 
 .nav a:hover {

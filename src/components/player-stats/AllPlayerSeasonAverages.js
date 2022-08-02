@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import { formatAveragesData } from "../../services/allPlayerSeasonAveragesService";
+import CloseButton from "../UI/CloseButton";
+import LogoComp from "../UI/LogoComp";
 import classes from "./AllPlayerSeasonAverages.module.css";
-const svgDir = require.context("../../assets");
 
 const AllPlayerSeasonAverages = (props) => {
   const AllSeasonAverages = useSelector((state) => state.player.playerAverages);
@@ -19,13 +20,13 @@ const AllPlayerSeasonAverages = (props) => {
 
   return (
     <div className={classes.container}>
+      <CloseButton onClose={props.onClose} />
       <div className={classes.headline}>
-        <button onClick={props.onClose}>X</button>
-        <h2>{`${playerData.playerName} ${seasonYear} Averages`}</h2>
-        <img
-          src={svgDir(`./${playerData.team}.svg`)}
-          alt={playerData.team}
-        ></img>
+        <div className={classes.headers}>
+          <h2>{`${playerData.playerName}`}</h2>
+          <h3>{`${seasonYear}-${+seasonYear + 1} Averages`}</h3>
+        </div>
+        <LogoComp id={playerData.team} />
       </div>
       <ul>{averagesContent}</ul>
     </div>

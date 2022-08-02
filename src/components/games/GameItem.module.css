@@ -1,47 +1,52 @@
 .list {
   position: relative;
   background-color: var(--background-primary-color);
-  border-radius: 24px;
-  margin-bottom: 24px;
-  border: 2px solid var(--text-primary-color);
+  margin: 0;
+  border-bottom: 2px solid var(--background-secondary-color);
+  max-width: 1062px;
 }
 
 .game {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 2fr 5fr 2fr;
   grid-template-rows: 1fr;
+  width: 100%;
 }
+
 .date {
-  margin: auto;
-  text-align: center;
+  width: 100%;
+  margin: auto 0;
   padding: 0;
-  max-width: min-content;
-  color: var(--text-secondary-color);
+  color: var(--text-primary-color);
 }
 
 .data {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 15%;
-  color: var(--text-secondary-color);
+  margin: 0 auto 0;
+  color: var(--text-primary-color);
 }
 
-.list button {
+.options {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+}
+
+.options button {
   padding: 4px;
-  border-bottom: none;
-  border-top: 1px dotted var(--text-primary-color);
-  border-left: none;
-  border-right: none;
-
+  border: none;
+  text-decoration: underline;
   cursor: pointer;
-  color: var(--text-secondary-color);
+  color: var(--text-tertiary-color);
   background-color: transparent;
-  width: 50%;
-  /* box-shadow: 0 3px 3px 0 rgb(220, 212, 212); */
   transition: color 0.3s;
+  text-align: right;
+  font-size: 1em;
 }
 
-.list button:hover {
+.options button:hover {
   color: var(--text-primary-color);
 }

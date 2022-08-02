@@ -1,17 +1,18 @@
 .container {
   margin: auto;
-  max-width: 600px;
-  max-height: 800px;
+  max-width: 500px;
+  max-height: 600px;
   background-color: var(--background-primary-color);
-  border-radius: 16px;
+  border-radius: 24px;
+  border: 2px solid var(--text-secondary-color);
   overflow: hidden;
 }
 
 .container ul {
   list-style: none;
-  margin: 0;
+  margin: 8px 0 16px;
   padding: 0;
-  max-height: 500px;
+  max-height: 350px;
   overflow-y: scroll;
 }
 
@@ -21,46 +22,35 @@
 }
 
 .container ul li div {
-  padding: 8px 64px 8px;
+  padding: 8px 48px 8px;
   color: var(--text-primary-color);
 }
 
-.container h2 {
+.headline h2 {
   color: var(--text-primary-color);
   text-align: center;
+  margin: 0;
 }
 
-.headline {
+.header {
+  margin: 0;
+  text-align: center;
   color: var(--text-primary-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 16px;
 }
 
-.headline p {
-  padding: 0 24px;
-  width: 100%;
-  color: var(--text-secondary-color);
-  text-align: center;
-}
-
-.headline button {
-  border-radius: 50%;
-  height: 32px;
-  width: 32px;
-  cursor: pointer;
-  margin-left: 8px;
+.headline {
+  border-bottom: 2px solid var(--text-secondary-color);
 }
 
 .game {
   display: flex;
-  border-bottom: 2px solid var(--text-secondary-color);
-  margin-bottom: 8px;
+  margin: 0 48px 8px;
+  color: var(--text-secondary-color);
 }
 
 .container ul::-webkit-scrollbar {
-  height: 8px;
+  width: 8px;
 }
 
 .container ul::-webkit-scrollbar-button {
