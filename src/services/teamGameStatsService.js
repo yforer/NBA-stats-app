@@ -3,7 +3,7 @@ import { getPlayersGameStatsAPI } from "./BallDontLieAPIClient";
 export const separatePlayersToTeams = (gameStats, teamFullName) =>
   gameStats.filter((player) => player.team.full_name === teamFullName);
 
-const playersToTeamStats = (teamPlayersStats) => {
+const separatePlayersToTeamStats = (teamPlayersStats) => {
   const teamGameStats = teamPlayersStats.reduce((total, item) => {
     Object.keys(item).forEach((key) => {
       total[key] = (total[key] || 0) + item[key];
@@ -53,10 +53,10 @@ export const getFormattedTeamStatsData = async (
 ) => {
   const data = await getPlayersGameStatsAPI(seasonYear, gameId);
   const gameStats = data.data;
-  const homeTeamGameStats = playersToTeamStats(
+  const homeTeamGameStats = separatePlayersToTeamStats(
     separatePlayersToTeams(gameStats, homeTeamName)
   );
-  const visitorTeamGameStats = playersToTeamStats(
+  const visitorTeamGameStats = separatePlayersToTeamStats(
     separatePlayersToTeams(gameStats, visitorTeamName)
   );
   const mergedTeamsStats = mergeTeamsStatsObjects(

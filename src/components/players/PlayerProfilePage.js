@@ -12,8 +12,13 @@ import LogoComp from "../UI/LogoComp";
 
 const PlayerProfilePage = () => {
   const dispatch = useDispatch();
-  const [playerData, setPlayerData] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [playerData, setPlayerData] = useState("");
+  const playerGeneralData = useSelector((state) => state.player.playerData);
+  const playerAverages = useSelector((state) => state.player.playerAverages);
+  const playerGamesStats = useSelector(
+    (state) => state.player.playerGamesStats
+  );
   const seasonYear = useSelector((state) => state.season.season);
   const params = useParams();
   const playerName = params.playerName.replace("-", " ");
@@ -28,16 +33,26 @@ const PlayerProfilePage = () => {
     try {
       setIsLoading(true);
       const data = await getPlayerProfileData(playerName, seasonYear);
-      setPlayerData(data);
+      if (
+        data.playerSeasonAverages === undefined ||
+        data.playerSeasonGamesStats.length === 0
+      ) {
+        alert("Chosen player did not play that season");
+        backToPlayersHandler();
+      } else {
+        setPlayerData(data);
 
-      dispatch(
-        playerActions.savePlayerData({
-          name: playerName,
-          team: data.playerSeasonGamesStats[0].team.abbreviation.toLowerCase(),
-        })
-      );
-      dispatch(playerActions.savePlayerAverages(data.playerSeasonAverages));
-      dispatch(playerActions.savePlayerGamesStats(data.playerSeasonGamesStats));
+        dispatch(
+          playerActions.savePlayerData({
+            name: playerName,
+            team: data.playerSeasonGamesStats[0].team.abbreviation.toLowerCase(),
+          })
+        );
+        dispatch(playerActions.savePlayerAverages(data.playerSeasonAverages));
+        dispatch(
+          playerActions.savePlayerGamesStats(data.playerSeasonGamesStats)
+        );
+      }
     } catch (error) {
       console.log(error);
     }
@@ -62,17 +77,11 @@ const PlayerProfilePage = () => {
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
             <h1>{playerName}</h1>
-            <LogoComp
-              id={playerData.playerSeasonGamesStats[0].team.abbreviation.toLowerCase()}
-            />
+            <LogoComp id={playerGeneralData.team} />
           </div>
           <div className={classes.sections}>
-            <PlayerSeasonAverages
-              playerAverages={playerData.playerSeasonAverages}
-            />
-            <PlayerStatsByGame
-              playerGamesStats={playerData.playerSeasonGamesStats}
-            />
+            <PlayerSeasonAverages playerAverages={playerAverages} />
+            <PlayerStatsByGame playerGamesStats={playerGamesStats} />
           </div>
         </div>
       )}

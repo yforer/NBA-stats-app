@@ -1,47 +1,31 @@
-import { Fragment, useRef } from "react";
+import { Fragment } from "react";
 import classes from "./MainHeader.module.css";
 import nbaLogo from "../../assets/nba-6.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { seasonActions } from "../../store/season";
 import { Link, useNavigate } from "react-router-dom";
+import SeasonForm from "./SeasonForm";
 
-const MainHeader = (props) => {
-  const seasonInputRef = useRef();
+const MainHeader = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  let navigate = useNavigate("/");
+  const seasonYear = useSelector((state) => state.season.season);
 
-  const submitSeasonHandler = (event) => {
-    event.preventDefault();
-    dispatch(seasonActions.seasonYear(seasonInputRef.current.value));
-    dispatch(seasonActions.seasonChosen(seasonInputRef.current.value));
-    navigate("/");
-  };
-
-  const toGomePageHandler = () => {
+  const toHomePageHandler = () => {
     dispatch(seasonActions.init());
-    seasonInputRef.current.value = "";
+    navigate("/");
   };
 
   return (
     <Fragment>
       <header className={classes.header}>
         <div className={classes.logo}>
-          <Link to="/" onClick={toGomePageHandler}>
+          <Link to="/" onClick={toHomePageHandler}>
             <img src={nbaLogo}></img>
           </Link>
         </div>
-        <form onSubmit={submitSeasonHandler}>
-          <div className={classes.season}>
-            <label>Season:</label>
-            <input
-              ref={seasonInputRef}
-              type="number"
-              min="1999"
-              max="2021"
-            ></input>
-            <button type="submit">Go!</button>
-          </div>
-        </form>
+        {seasonYear && <h1>{`${seasonYear} - ${+seasonYear + 1}`}</h1>}
+        <SeasonForm style={0} labelContent="season:" />
       </header>
     </Fragment>
   );

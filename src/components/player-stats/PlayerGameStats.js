@@ -1,8 +1,7 @@
 import classes from "./PlayerGameStats.module.css";
 import { useSelector } from "react-redux";
 import { formatPlayerGameData } from "../../services/singlePlayerGameStatsService";
-import GameVisitorTeamInfo from "./GameVisitorTeamImfo";
-import GameHomeTeamInfo from "./GameHomeTeamInfo";
+import GameTeamInfo from "./GameTeamInfo";
 import CloseButton from "../UI/CloseButton";
 
 const PlayerGameStats = (props) => {
@@ -31,12 +30,14 @@ const PlayerGameStats = (props) => {
         <h2>{`${playerData.playerName}`}</h2>
         <p className={classes.header}>Full game stats</p>
         <div className={classes.game}>
-          <GameHomeTeamInfo
-            homeTeam={gameData.homeTeam}
+          <GameTeamInfo
+            isHomeTeam={true}
+            team={gameData.homeTeam}
             score={chosenGameData.game.home_team_score}
           />
-          <GameVisitorTeamInfo
-            visitorTeam={gameData.visitorTeam}
+          <GameTeamInfo
+            isHomeTeam={false}
+            team={gameData.visitorTeam}
             score={chosenGameData.game.visitor_team_score}
           />
         </div>
