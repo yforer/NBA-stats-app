@@ -8,36 +8,28 @@ const LeadingPlayers = () => {
   const seasonYear = useSelector((state) => state.season.season);
   const yearKey = `season${seasonYear}`;
 
-  const pointsLeadersContent = leadingPlayersData[yearKey].points.map(
-    (player) => (
+  const createContent = (leadersArray) => {
+    return leadersArray.map((player) => (
       <li key={player.name}>
         <div>{player.name}</div>
         <div>{player.value}</div>
       </li>
-    )
-  );
+    ));
+  };
 
-  const reboundsLeadersContent = leadingPlayersData[yearKey].rebounds.map(
-    (player) => (
-      <li key={player.name}>
-        <div>{player.name}</div>
-        <div>{player.value}</div>
-      </li>
-    )
+  const pointsLeadersContent = createContent(
+    leadingPlayersData[yearKey].points
   );
-
-  const assistsLeadersContent = leadingPlayersData[yearKey].assists.map(
-    (player) => (
-      <li key={player.name}>
-        <div>{player.name}</div>
-        <div>{player.value}</div>
-      </li>
-    )
+  const reboundsLeadersContent = createContent(
+    leadingPlayersData[yearKey].rebounds
+  );
+  const assistsLeadersContent = createContent(
+    leadingPlayersData[yearKey].assists
   );
 
   return (
     <div className={classes.container}>
-      <h2>{`${seasonYear}-${+seasonYear + 1} Season Averages Leaders`}</h2>
+      <h2>Season Averages Leaders</h2>
       <div className={classes.categories}>
         <div className={classes.leaders}>
           <div className={classes.headline}>

@@ -1,9 +1,10 @@
 .headline {
   display: flex;
   justify-content: space-between;
+  position: relative;
   color: var(--text-primary-color);
   max-width: 1062px;
-  margin: 0 auto 48px;
+  margin: 0 auto 72px;
   padding-top: 48px;
 }
 
@@ -20,11 +21,14 @@
 }
 
 .search {
+  position: absolute;
+  right: 0;
   border: 2px solid var(--text-secondary-color);
   border-radius: 16px;
   width: 50%;
   padding: 8px 0 8px;
-  margin-right: 8px;
+  z-index: 5;
+  background-color: var(--background-primary-color);
 }
 
 .search input {

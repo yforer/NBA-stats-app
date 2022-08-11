@@ -35,14 +35,14 @@ const PlayersGameStats = (props) => {
       <div className={classes.team}>
         <button
           onClick={showHomePlayersStatsHandler}
-          className={hometeamSelected && classes.active}
+          className={hometeamSelected ? classes.active : undefined}
         >
           <LogoComp id={homeTeamAbbreviation} />
           <p>{gameInfo.homeTeam}</p>
         </button>
         <button
           onClick={showVisitorPlayersStatsHandler}
-          className={!hometeamSelected && classes.active}
+          className={!hometeamSelected ? classes.active : undefined}
         >
           <LogoComp id={visitorTeamAbbreviation} />
           <p>{gameInfo.visitorTeam}</p>

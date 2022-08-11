@@ -31,34 +31,3 @@
   width: 440px;
   margin-top: 115px;
 }
-
-.season {
-  background-color: transparent;
-  border-radius: 8px;
-  margin-top: 16px;
-  color: var(--text-primary-color);
-}
-.season label {
-  padding: 3px;
-  margin-right: 8px;
-}
-
-.season input {
-  margin: 2px;
-  color: var(--text-primary-color);
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid var(--text-primary-color);
-  font-weight: bold;
-}
-
-.season button {
-  background-color: var(--background-primary-color);
-  color: var(--text-tertiary-color);
-  border: 1px solid var(--text-tertiary-color);
-  margin-left: 16px;
-  font-weight: bold;
-  padding: 4px 16px 2px;
-  border-radius: 16px;
-  cursor: pointer;
-}

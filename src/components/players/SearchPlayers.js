@@ -6,8 +6,8 @@ import LoadingDots from "../UI/LoadingDots";
 import { GoSearch } from "react-icons/go";
 
 const SearchPlayers = () => {
-  const [playersSearchList, setPlayersSearchList] = useState();
-  const [inputText, setInputText] = useState();
+  const [playersSearchList, setPlayersSearchList] = useState("");
+  const [inputText, setInputText] = useState("");
   const [inputTextIsValid, setInputTextIsValid] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
