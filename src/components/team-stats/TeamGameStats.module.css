@@ -26,13 +26,15 @@
 }
 
 .headers {
-  width: 100%;
-  margin: auto;
+  margin-right: 8px;
   display: grid;
   text-align: center;
   grid-template-columns: 1fr 1fr 1fr;
   color: var(--text-secondary-color);
-  margin-bottom: 16px;
+}
+
+.headers p {
+  margin-top: 64px;
 }
 
 .stats {
@@ -73,6 +75,21 @@
   margin-bottom: 16px;
 }
 
+.list p {
+  margin: 0 24px;
+  padding: 0;
+}
+
 .list div {
   text-align: center;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px;
+  margin-top: 8px;
+}
+
+.logo p {
+  margin: 8px;
 }

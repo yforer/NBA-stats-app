@@ -2,6 +2,7 @@ import classes from "./TeamGameStats.module.css";
 import { useSelector } from "react-redux";
 import TeamGameStatsList from "./TeamGameStatsList";
 import CloseButton from "../UI/CloseButton";
+import LogoComp from "../UI/LogoComp";
 
 const TeamGameStats = (props) => {
   const gameStats = props.gameStats;
@@ -16,9 +17,15 @@ const TeamGameStats = (props) => {
       </div>
       <div className={classes.data}>
         <div className={classes.headers}>
-          <p>Category</p>
-          <p>{gameInfo.homeTeam}</p>
-          <p>{gameInfo.visitorTeam}</p>
+          <div></div>
+          <div className={classes.logo}>
+            <LogoComp id={gameInfo.homeTeamId} />
+            <p>{gameInfo.homeTeam}</p>
+          </div>
+          <div className={classes.logo}>
+            <LogoComp id={gameInfo.visitorTeamId} />
+            <p>{gameInfo.visitorTeam}</p>
+          </div>
         </div>
         <div className={classes.stats}>
           <ul>

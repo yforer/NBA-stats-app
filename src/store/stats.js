@@ -5,7 +5,9 @@ const initialStatsState = {
   gameInfo: {
     gameId: "",
     homeTeam: "",
+    homeTeamId: "",
     visitorTeam: "",
+    visitorTeamId: "",
     date: "",
   },
   teamGameStatsChosen: false,
@@ -28,7 +30,9 @@ const statsSlice = createSlice({
       state.gameInfo = {
         gameId: action.payload.gameId,
         homeTeam: action.payload.homeTeam,
+        homeTeamId: action.payload.homeTeamId,
         visitorTeam: action.payload.visitorTeam,
+        visitorTeamId: action.payload.visitorTeamId,
         date: action.payload.date,
       };
     },
