@@ -3,19 +3,12 @@ import { useSelector } from "react-redux";
 import classes from "./PlayersGameStats.module.css";
 import PlayersGameStatsList from "./PlayersGameStatsList";
 import CloseButton from "../UI/CloseButton";
-import { teamsLogos } from "../teams/TeamsLogos";
 import LogoComp from "../UI/LogoComp";
 
 const PlayersGameStats = (props) => {
   const gameStats = props.gameStats;
   const gameInfo = useSelector((state) => state.stats.gameInfo);
   const [hometeamSelected, setHomeTeamSelected] = useState(true);
-  const homeTeamAbbreviation = teamsLogos.find(
-    (team) => team.name === gameInfo.homeTeam
-  ).id;
-  const visitorTeamAbbreviation = teamsLogos.find(
-    (team) => team.name === gameInfo.visitorTeam
-  ).id;
 
   const showHomePlayersStatsHandler = () => {
     setHomeTeamSelected(true);
@@ -37,14 +30,14 @@ const PlayersGameStats = (props) => {
           onClick={showHomePlayersStatsHandler}
           className={hometeamSelected ? classes.active : undefined}
         >
-          <LogoComp id={homeTeamAbbreviation} />
+          <LogoComp id={gameInfo.homeTeamId} />
           <p>{gameInfo.homeTeam}</p>
         </button>
         <button
           onClick={showVisitorPlayersStatsHandler}
           className={!hometeamSelected ? classes.active : undefined}
         >
-          <LogoComp id={visitorTeamAbbreviation} />
+          <LogoComp id={gameInfo.visitorTeamId} />
           <p>{gameInfo.visitorTeam}</p>
         </button>
       </div>

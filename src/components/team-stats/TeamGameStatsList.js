@@ -6,7 +6,7 @@ const TeamGameStatsList = (props) => {
 
   const content = allTeamsStatsArray.map((stat) => (
     <li key={stat.category} className={classes.list}>
-      <div>{stat.category}</div>
+      <p>{stat.category}</p>
       <div>{stat.homeTeamValue}</div>
       <div>{stat.visitorTeamValue}</div>
     </li>

@@ -27,7 +27,9 @@ const GameItem = (props) => {
       statsActions.gameChosenHandler({
         gameId: gameId,
         homeTeam: homeTeam.name,
+        homeTeamId: homeTeam.id,
         visitorTeam: visitorTeam.name,
+        visitorTeamId: visitorTeam.id,
         date: formattedDate,
       })
     );
@@ -40,7 +42,9 @@ const GameItem = (props) => {
       statsActions.gameChosenHandler({
         gameId: props.id,
         homeTeam: homeTeam.name,
+        homeTeamId: homeTeam.id,
         visitorTeam: visitorTeam.name,
+        visitorTeamId: visitorTeam.id,
         date: formattedDate,
       })
     );

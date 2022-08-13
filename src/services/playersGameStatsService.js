@@ -1,4 +1,3 @@
-import player from "../store/player";
 import { getPlayersGameStatsAPI } from "./BallDontLieAPIClient";
 import { separatePlayersToTeams } from "./teamGameStatsService";
 

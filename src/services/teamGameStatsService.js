@@ -30,6 +30,31 @@ const separatePlayersToTeamStats = (teamPlayersStats) => {
   return teamGameStats;
 };
 
+const reorderCategories = (teamGameStats) => {
+  const orderedTeamGameStats = {
+    pts: teamGameStats.pts,
+    ast: teamGameStats.ast,
+    reb: teamGameStats.reb,
+    blk: teamGameStats.blk,
+    stl: teamGameStats.stl,
+    dreb: teamGameStats.dreb,
+    oreb: teamGameStats.oreb,
+    fg3a: teamGameStats.fg3a,
+    fg3m: teamGameStats.fg3m,
+    fg3_pct: teamGameStats.fg3_pct,
+    fga: teamGameStats.fga,
+    fgm: teamGameStats.fgm,
+    fg_pct: teamGameStats.fg_pct,
+    fta: teamGameStats.fta,
+    ftm: teamGameStats.ftm,
+    ft_pt: teamGameStats.ft_pct,
+    pf: teamGameStats.pf,
+    turnover: teamGameStats.turnover,
+  };
+
+  return orderedTeamGameStats;
+};
+
 const mergeTeamsStatsObjects = (homeTeamStats, visitorTeamStats) => {
   const homeTeamStatsArray = Object.entries(homeTeamStats);
   const visitorTeamStatsArray = Object.entries(visitorTeamStats);
@@ -53,11 +78,13 @@ export const getFormattedTeamStatsData = async (
 ) => {
   const data = await getPlayersGameStatsAPI(seasonYear, gameId);
   const gameStats = data.data;
-  const homeTeamGameStats = separatePlayersToTeamStats(
-    separatePlayersToTeams(gameStats, homeTeamName)
+  const homeTeamGameStats = reorderCategories(
+    separatePlayersToTeamStats(separatePlayersToTeams(gameStats, homeTeamName))
   );
-  const visitorTeamGameStats = separatePlayersToTeamStats(
-    separatePlayersToTeams(gameStats, visitorTeamName)
+  const visitorTeamGameStats = reorderCategories(
+    separatePlayersToTeamStats(
+      separatePlayersToTeams(gameStats, visitorTeamName)
+    )
   );
   const mergedTeamsStats = mergeTeamsStatsObjects(
     homeTeamGameStats,

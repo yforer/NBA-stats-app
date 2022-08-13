@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import classes from "./PlayersGameStatsList.module.css";
 
 const PlayersGameStatsList = (props) => {
