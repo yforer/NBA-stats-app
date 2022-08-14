@@ -45,9 +45,7 @@ const TeamGamesPage = () => {
       {!isLoading && games.length > 0 && (
         <div className={classes.games}>
           <TeamSeasonStats sortedGames={games} />
-          <ul>
-            <GamesList games={games} />
-          </ul>
+          <GamesList games={games} />
         </div>
       )}
     </Fragment>

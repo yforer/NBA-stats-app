@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import classes from "./TeamGameStats.module.css";
 
 const TeamGameStatsList = (props) => {
@@ -12,7 +11,7 @@ const TeamGameStatsList = (props) => {
     </li>
   ));
 
-  return <Fragment>{content}</Fragment>;
+  return <ul>{content}</ul>;
 };
 
 export default TeamGameStatsList;

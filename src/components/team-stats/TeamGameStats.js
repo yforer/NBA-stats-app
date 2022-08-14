@@ -28,9 +28,7 @@ const TeamGameStats = (props) => {
           </div>
         </div>
         <div className={classes.stats}>
-          <ul>
-            <TeamGameStatsList gameStats={gameStats} />
-          </ul>
+          <TeamGameStatsList gameStats={gameStats} />
         </div>
       </div>
     </div>
