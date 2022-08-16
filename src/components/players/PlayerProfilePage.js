@@ -2,7 +2,7 @@ import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { playerActions } from "../../store/player";
-import classes from "./PlayerProfilePage.module.css";
+import classes from "./PlayerProfilePage.module.scss";
 import PlayerSeasonAverages from "./PlayerSeasonAverages";
 import PlayerStatsByGame from "./PlayerStatsByGame";
 import LoadingSpinner from "../UI/LoadingSpinner";
@@ -76,7 +76,7 @@ const PlayerProfilePage = () => {
             <button
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
-            <h1>{playerName}</h1>
+            <h2>{playerName}</h2>
             <LogoComp id={playerGeneralData.team} />
           </div>
           <div className={classes.sections}>

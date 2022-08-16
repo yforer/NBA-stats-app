@@ -1,6 +1,6 @@
 import { leadingPlayersData } from "./leading-players-data";
 import { useSelector } from "react-redux";
-import classes from "./LeadingPlayers.module.css";
+import classes from "./LeadingPlayers.module.scss";
 import { BsArrowDownShort, BsArrowRightShort } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 
@@ -29,7 +29,7 @@ const LeadingPlayers = () => {
 
   return (
     <div className={classes.container}>
-      <h2>Season Averages Leaders</h2>
+      <h3>Season Averages Leaders</h3>
       <div className={classes.categories}>
         <div className={classes.leaders}>
           <div className={classes.headline}>

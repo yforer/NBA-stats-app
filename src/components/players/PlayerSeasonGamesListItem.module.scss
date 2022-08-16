@@ -1,0 +1,31 @@
+li {
+  margin-bottom: 8px;
+  margin-right: 4px;
+
+  button {
+    background-color: transparent;
+    color: var(--text-primary-color);
+    border: 2px solid var(--text-secondary-color);
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    align-items: center;
+    padding: 8px 0;
+    transition: border 0.3s;
+
+    &:hover {
+      border: 2px solid var(--text-primary-color);
+    }
+
+    .date {
+      color: var(--text-secondary-color);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .game {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

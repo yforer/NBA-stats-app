@@ -1,4 +1,4 @@
-import classes from "./TeamGameStats.module.css";
+import classes from "./TeamGameStats.module.scss";
 import { useSelector } from "react-redux";
 import TeamGameStatsList from "./TeamGameStatsList";
 import CloseButton from "../UI/CloseButton";

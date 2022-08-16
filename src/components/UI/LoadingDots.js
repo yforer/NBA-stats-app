@@ -1,4 +1,4 @@
-import classes from "./LoadingDots.module.css";
+import classes from "./LoadingDots.module.scss";
 
 const LoadingDots = () => {
   return <div className={classes.loading}>...</div>;

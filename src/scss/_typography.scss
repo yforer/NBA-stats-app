@@ -1,0 +1,37 @@
+@import "./variables";
+
+h1 {
+  font-size: 120px;
+  font-weight: bold;
+  color: var(--text-primary-color);
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--text-primary-color);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-primary-color);
+  margin: 0;
+}
+
+button {
+  font-size: 16px;
+  font-weight: $medium;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-primary-color);
+  font-weight: 400;
+  margin: 0;
+}
+
+a {
+  font-size: 16px;
+  font-weight: 500;
+}

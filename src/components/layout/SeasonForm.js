@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { seasonActions } from "../../store/season";
-import classes from "./SeasonForm.module.css";
+import classes from "./SeasonForm.module.scss";
 
 const SeasonForm = (props) => {
   const season = useSelector((state) => state.season.localSeasonInput);

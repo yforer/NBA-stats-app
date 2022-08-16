@@ -1,0 +1,15 @@
+.container {
+  margin: auto;
+  max-width: 1062px;
+
+  h2 {
+    margin-left: 24px;
+  }
+
+  .teams {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(10, 350px);
+  }
+}

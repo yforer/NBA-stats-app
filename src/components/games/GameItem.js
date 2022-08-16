@@ -1,5 +1,5 @@
 import { teamsLogos } from "../teams/TeamsLogos";
-import classes from "./GameItem.module.css";
+import classes from "./GameItem.module.scss";
 import TeamGameItem from "./TeamGameItem";
 import { useDispatch } from "react-redux";
 import { statsActions } from "../../store/stats";

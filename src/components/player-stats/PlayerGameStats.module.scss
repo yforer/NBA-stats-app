@@ -1,0 +1,71 @@
+@import "../../scss/variables";
+
+.container {
+  margin: auto;
+  width: 500px;
+  max-height: 600px;
+  background-color: var(--background-primary-color);
+  border-radius: 24px;
+  border: 2px solid var(--text-secondary-color);
+  overflow: hidden;
+
+  .headline {
+    border-bottom: 2px solid var(--text-secondary-color);
+    width: 100%;
+
+    h3 {
+      color: var(--text-primary-color);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .header {
+      margin: 0;
+      text-align: center;
+      color: var(--text-primary-color);
+      margin-bottom: 16px;
+    }
+
+    .game {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 48px 8px;
+      color: var(--text-secondary-color);
+    }
+  }
+
+  .list {
+    list-style: none;
+    margin: 8px 0 16px;
+    padding: 0;
+    max-height: 350px;
+    overflow-y: scroll;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin: 16px 48px;
+
+      &-category {
+        font-weight: $medium;
+      }
+    }
+  }
+}
+
+.container ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container ul::-webkit-scrollbar-button {
+  display: none;
+}
+
+.container ul::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 8px;
+}
+.container ul::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}

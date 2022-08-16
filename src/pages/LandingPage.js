@@ -1,5 +1,5 @@
 import homePageDrowing from "../assets/landing-drow.png";
-import classes from "./LandingPage.module.css";
+import classes from "./LandingPage.module.scss";
 import SeasonForm from "../components/layout/SeasonForm";
 
 const LandingPage = () => {

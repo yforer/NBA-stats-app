@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import classes from "./PlayersGameStats.module.css";
+import classes from "./PlayersGameStats.module.scss";
 import PlayersGameStatsList from "./PlayersGameStatsList";
 import CloseButton from "../UI/CloseButton";
 import LogoComp from "../UI/LogoComp";

@@ -1,5 +1,5 @@
 import { CgClose } from "react-icons/cg";
-import classes from "./CloseButton.module.css";
+import classes from "./CloseButton.module.scss";
 
 const CloseButton = (props) => {
   return (

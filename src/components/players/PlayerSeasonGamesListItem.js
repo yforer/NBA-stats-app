@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { playerActions } from "../../store/player";
 import { statsActions } from "../../store/stats";
-import classes from "./PlayerSeasonGamesListItem.module.css";
+import classes from "./PlayerSeasonGamesListItem.module.scss";
 
 const PlayerSeasonGamesListItem = (props) => {
   const dispatch = useDispatch();

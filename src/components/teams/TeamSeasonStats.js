@@ -1,4 +1,4 @@
-import classes from "./TeamSeasonStats.module.css";
+import classes from "./TeamSeasonStats.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { teamsLogos } from "./TeamsLogos";
 import LogoComp from "../UI/LogoComp";
@@ -36,15 +36,15 @@ const TeamSeasonStats = (props) => {
           <button
             onClick={backToAllTeamsHndler}
           >{`< Back to all teams`}</button>
-          <h1>{`${team.name}`}</h1>
+          <h2>{`${team.name}`}</h2>
         </div>
       </div>
       <div className={classes.record}>
         <LogoComp id="landing-drow" />
         <p>Regular Season Record:</p>
-        <h2>{`${regularSeasonWins}W - ${
+        <h3>{`${regularSeasonWins}W - ${
           regularSeasonGames.length - regularSeasonWins
-        }L`}</h2>
+        }L`}</h3>
       </div>
     </div>
   );

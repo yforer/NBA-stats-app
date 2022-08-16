@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import classes from "./SearchPlayers.module.css";
+import classes from "./SearchPlayers.module.scss";
 import PlayersSearchList from "./PlayersSearchList";
 import { getPlayersSearchResults } from "../../services/searchPlayerService";
 import LoadingDots from "../UI/LoadingDots";
@@ -35,7 +35,7 @@ const SearchPlayers = () => {
 
   return (
     <div className={classes.headline}>
-      <h1>Players</h1>
+      <h2>Players</h2>
       <div className={classes.search}>
         <div className={classes.bar}>
           <GoSearch size={20} />

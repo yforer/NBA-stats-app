@@ -1,0 +1,73 @@
+@import "../../scss/variables";
+
+.season {
+  background-color: var(--background-secondary-color);
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--text-secondary-color);
+
+  label {
+    padding: 3px;
+    margin-right: 8px;
+  }
+
+  input {
+    margin: 2px;
+    color: var(--text-primary-color);
+    background-color: var(--background-secondary-color);
+    border: none;
+    border-bottom: 2px solid var(--text-primary-color);
+    font-weight: $medium;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: var(--background-secondary-color);
+    color: var(--text-primary-color);
+    border: 2px solid var(--text-primary-color);
+    margin-left: 16px;
+    font-weight: bold;
+    padding: 8px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+}
+
+.season2 {
+  background-color: transparent;
+  border-radius: 8px;
+  margin-top: 16px;
+  color: var(--text-primary-color);
+
+  label {
+    padding: 3px;
+    margin-right: 8px;
+  }
+
+  input {
+    margin: 2px;
+    color: var(--text-primary-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--text-primary-color);
+    font-weight: $medium;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: var(--background-primary-color);
+    color: var(--text-tertiary-color);
+    border: 1px solid var(--text-tertiary-color);
+    margin-left: 16px;
+    font-weight: bold;
+    padding: 4px 16px 2px;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+}

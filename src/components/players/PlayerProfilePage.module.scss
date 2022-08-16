@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1062px;
+    width: 1062px;
+    border-bottom: 2px solid var(--background-secondary-color);
+
+    h2 {
+      text-align: center;
+    }
+
+    img {
+      width: 150px;
+      padding: 24px 0 24px 48px;
+      margin-left: 50px;
+    }
+
+    button {
+      width: 200px;
+      cursor: pointer;
+      background-color: transparent;
+      color: var(--text-quaternary-color);
+      border: none;
+      font-weight: bold;
+    }
+  }
+
+  .sections {
+    display: flex;
+    justify-content: space-between;
+    width: 1062px;
+    margin-top: 50px;
+  }
+}

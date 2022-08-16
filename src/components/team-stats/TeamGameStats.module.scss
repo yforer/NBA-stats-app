@@ -1,0 +1,85 @@
+@import "../../scss/variables";
+
+.container {
+  border: 2px var(--text-secondary-color) solid;
+  border-radius: 24px;
+  background-color: var(--background-primary-color);
+  width: 500px;
+  margin: auto;
+  max-height: 550px;
+
+  .info {
+    color: var(--text-primary-color);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px var(--text-secondary-color) solid;
+    padding-bottom: 2rem;
+
+    p {
+      text-align: center;
+      margin: 0;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .data {
+    .headers {
+      margin-right: 8px;
+      display: grid;
+      text-align: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      color: var(--text-secondary-color);
+
+      p {
+        margin-top: 64px;
+      }
+
+      .logo {
+        img {
+          height: 50px;
+          width: 50px;
+          margin-top: 8px;
+        }
+
+        p {
+          margin: 8px;
+          font-weight: $medium;
+        }
+      }
+    }
+
+    .stats {
+      overflow-y: scroll;
+      max-width: inherit;
+      max-height: 300px;
+      color: var(--text-primary-color);
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.stats::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stats::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stats::-webkit-scrollbar-button {
+  display: none;
+}
+
+.stats::-webkit-scrollbar-track {
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.stats::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}

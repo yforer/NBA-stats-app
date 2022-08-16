@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classes from "./MainHeader.module.css";
+import classes from "./MainHeader.module.scss";
 import nbaLogo from "../../assets/nba-6.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { seasonActions } from "../../store/season";
@@ -24,7 +24,7 @@ const MainHeader = () => {
             <img src={nbaLogo}></img>
           </Link>
         </div>
-        {seasonYear && <h1>{`${seasonYear} - ${+seasonYear + 1}`}</h1>}
+        {seasonYear && <h2>{`${seasonYear} - ${+seasonYear + 1}`}</h2>}
         <SeasonForm style={0} labelContent="season:" />
       </header>
     </Fragment>

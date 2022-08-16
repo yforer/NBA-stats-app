@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import classes from "./PlayerStatsByGame.module.css";
+import classes from "./PlayerStatsByGame.module.scss";
 import { useSelector } from "react-redux";
 import {
   createGameLinkData,

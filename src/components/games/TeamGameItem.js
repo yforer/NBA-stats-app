@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import classes from "./TeamGameItem.module.css";
+import classes from "./TeamGameItem.module.scss";
 import LogoComp from "../UI/LogoComp";
 
 const TeamGameItem = (props) => {
@@ -9,11 +9,11 @@ const TeamGameItem = (props) => {
         <LogoComp id={props.team.id} />
         <p>{props.team.name}</p>
       </div>
-      <h2>{props.score}</h2>
+      <h3>{props.score}</h3>
     </Fragment>
   ) : (
     <Fragment>
-      <h2>{props.score}</h2>
+      <h3>{props.score}</h3>
       <div className={classes.logo}>
         <LogoComp id={props.team.id} />
         <p>{props.team.name}</p>

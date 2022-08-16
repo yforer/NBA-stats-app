@@ -1,0 +1,74 @@
+.container {
+  border: 2px var(--text-secondary-color) solid;
+  border-radius: 24px;
+  background-color: var(--background-primary-color);
+  max-width: 1064px;
+  height: 714px;
+  margin: auto;
+
+  .info {
+    color: var(--text-primary-color);
+    display: flex;
+    flex-direction: column;
+
+    p {
+      text-align: center;
+      margin: 0;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .team {
+    display: flex;
+    margin: 0 32px 0;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid var(--text-secondary-color);
+      cursor: pointer;
+      width: 50%;
+      margin: 8px 16px 0;
+      padding: 0 0 8px;
+      transition: border-bottom 0.3s;
+      color: var(--text-secondary-color);
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+      }
+
+      p {
+        transition: font-weight 0.3s;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        border-bottom: 2px solid var(--text-primary-color);
+      }
+
+      &:hover p {
+        color: var(--text-primary-color);
+        font-weight: bold;
+      }
+
+      &:active,
+      &.active {
+        border-bottom: 2px solid var(--text-primary-color);
+
+        p {
+          color: var(--text-primary-color);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

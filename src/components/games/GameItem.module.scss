@@ -1,0 +1,51 @@
+.list {
+  position: relative;
+  background-color: var(--background-primary-color);
+  margin: 0;
+  border-bottom: 2px solid var(--background-secondary-color);
+  max-width: 1062px;
+
+  .game {
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+
+    .date {
+      width: 100%;
+      margin: auto 0;
+      padding: 0;
+      color: var(--text-primary-color);
+    }
+
+    .data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0;
+      color: var(--text-primary-color);
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      justify-content: center;
+
+      button {
+        padding: 4px;
+        border: none;
+        text-decoration: underline;
+        cursor: pointer;
+        color: var(--text-tertiary-color);
+        background-color: transparent;
+        transition: color 0.3s;
+        text-align: right;
+
+        &:hover {
+          color: var(--text-primary-color);
+        }
+      }
+    }
+  }
+}

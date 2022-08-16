@@ -1,0 +1,24 @@
+@import "../../scss/variables";
+
+.list {
+  list-style: none;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+
+  .item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 16px;
+
+    p {
+      margin: 0 48px;
+      padding: 0;
+      font-weight: $medium;
+    }
+
+    div {
+      text-align: center;
+    }
+  }
+}
