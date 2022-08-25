@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import { seasonActions } from "../../store/season";
@@ -9,6 +9,7 @@ const SeasonForm = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
+  const [isSeasonChosen, setIsSeasonChosen] = useState(false);
 
   const submitSeasonHandler = (event) => {
     event.preventDefault();
@@ -16,12 +17,15 @@ const SeasonForm = (props) => {
       alert("Please choose a season!");
       return;
     }
+    setIsSeasonChosen(true);
     dispatch(seasonActions.seasonYear(event.currentTarget[0].value));
     dispatch(seasonActions.seasonChosen(event.currentTarget[0].value));
     navigate("/teams");
+    console.log(isSeasonChosen);
   };
 
   const changeSeasonHandler = (event) => {
+    setIsSeasonChosen(false);
     dispatch(seasonActions.setLocalSeasonInput(event.target.value));
   };
 
@@ -37,11 +41,13 @@ const SeasonForm = (props) => {
         <div className={classes.action}>
           <label>{props.labelContent}</label>
           <input
+            className={isSeasonChosen ? classes.input : classes["input-chosen"]}
             onChange={changeSeasonHandler}
             value={season}
             type="number"
             min="1999"
             max="2021"
+            placeholder="Year"
           ></input>
         </div>
         <button type="submit">Go!</button>
