@@ -25,7 +25,7 @@ const MainHeader = () => {
           </Link>
         </div>
         {seasonYear && <h2>{`${seasonYear} - ${+seasonYear + 1}`}</h2>}
-        <SeasonForm style={0} labelContent="season:" />
+        <SeasonForm style={0} labelContent="Season:" />
       </header>
     </Fragment>
   );

@@ -20,15 +20,15 @@ const formatAndSortPlayersStats = (playersStats) => {
         oreb: player.oreb,
         fg3a: player.fg3a,
         fg3m: player.fg3m,
-        fg3_pct: (player.fg3_pct * 100).toFixed(0) + "%",
+        "fg3%": (player.fg3_pct * 100).toFixed(0) + "%",
         fga: player.fga,
         fgm: player.fgm,
-        fg_pct: (player.fg_pct * 100).toFixed(0) + "%",
+        "fg%": (player.fg_pct * 100).toFixed(0) + "%",
         fta: player.fta,
         ftm: player.ftm,
-        ft_pt: (player.ft_pct * 100).toFixed(0) + "%",
+        "ft%": (player.ft_pct * 100).toFixed(0) + "%",
         pf: player.pf,
-        turnover: player.turnover,
+        tov: player.turnover,
       })
   );
   const sortedPlayersStats = formattedPlayersStats

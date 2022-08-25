@@ -1,22 +1,49 @@
-@import "./variables";
-
 h1 {
-  font-size: 120px;
+  margin: 0;
   font-weight: bold;
   color: var(--text-primary-color);
+
+  @media #{$break1} {
+    font-size: 64px;
+  }
+  @media #{$break2} {
+    font-size: 96px;
+  }
+  @media #{$break3} {
+    font-size: 120px;
+  }
 }
 
 h2 {
-  font-size: 40px;
+  margin: 0;
   font-weight: bold;
   color: var(--text-primary-color);
+
+  @media #{$break1} {
+    font-size: 24px;
+  }
+  @media #{$break2} {
+    font-size: 30px;
+  }
+  @media #{$break3} {
+    font-size: 40px;
+  }
 }
 
 h3 {
-  font-size: 20px;
   font-weight: bold;
   color: var(--text-primary-color);
   margin: 0;
+
+  @media #{$break1} {
+    font-size: 16px;
+  }
+  @media #{$break2} {
+    font-size: 18px;
+  }
+  @media #{$break3} {
+    font-size: 20px;
+  }
 }
 
 button {
@@ -25,13 +52,43 @@ button {
 }
 
 p {
-  font-size: 16px;
   color: var(--text-primary-color);
   font-weight: 400;
   margin: 0;
+
+  @media #{$break1} {
+    font-size: 14px;
+  }
+  @media #{$break2} {
+    font-size: 16px;
+  }
+  @media #{$break3} {
+    font-size: 16px;
+  }
 }
 
 a {
-  font-size: 16px;
-  font-weight: 500;
+  font-weight: $medium;
+
+  @media #{$break1} {
+    font-size: 14px;
+  }
+  @media #{$break2} {
+    font-size: 16px;
+  }
+  @media #{$break3} {
+    font-size: 16px;
+  }
+}
+
+div {
+  @media #{$break1} {
+    font-size: 14px;
+  }
+  @media #{$break2} {
+    font-size: 16px;
+  }
+  @media #{$break3} {
+    font-size: 16px;
+  }
 }

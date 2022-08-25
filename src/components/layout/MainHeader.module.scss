@@ -1,18 +1,31 @@
-@import "../../scss/_global-imports.scss";
+@import "../../scss/_variables.scss";
 
 .header {
   max-width: 1440px;
   height: 90px;
   display: flex;
-  margin: 0 80px;
   justify-content: space-between;
   align-items: center;
   background-color: var(--background-primary-color);
 
+  @media #{$break1} {
+    margin: 0 1.5rem;
+  }
+  @media #{$break2} {
+    margin: 0 4rem;
+  }
+  @media #{$break3} {
+    margin: 0 5rem;
+  }
+
   h2 {
-    margin: 0 0 0 280px;
+    margin: 0 0 0 18rem;
     font-size: 32px;
     color: var(--text-secondary-color);
+
+    @media #{$break1}, #{$break2} {
+      display: none;
+    }
   }
 
   .logo {

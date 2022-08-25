@@ -9,6 +9,7 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 import { getPlayerProfileData } from "../../services/playersProfileService";
 import { useNavigate } from "react-router-dom";
 import LogoComp from "../UI/LogoComp";
+import MobileBackButton from "../UI/MobileBackButton";
 
 const PlayerProfilePage = () => {
   const dispatch = useDispatch();
@@ -76,6 +77,7 @@ const PlayerProfilePage = () => {
             <button
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
+            <MobileBackButton action={backToPlayersHandler} isTeams={false} />
             <h2>{playerName}</h2>
             <LogoComp id={playerGeneralData.team} />
           </div>

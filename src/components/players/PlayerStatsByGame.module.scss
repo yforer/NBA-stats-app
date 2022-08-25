@@ -1,22 +1,52 @@
+@import "../../scss/variables";
+
 .games {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+
+  @media #{$break1}, #{$break2} {
+    width: 100%;
+  }
+  @media #{$break3} {
+    width: 500px;
+  }
 
   .headline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
+
+    @media #{$break1} {
+      text-align: center;
+    }
+    @media #{$break2} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media #{$break3} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     h3 {
       color: var(--text-primary-color);
-      width: 40%;
-      padding-left: 4px;
+
+      @media #{$break1} {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      @media #{$break2} {
+        width: calc(100vw - 8rem - 280px - 1.5rem);
+      }
+      @media #{$break3} {
+        width: 40%;
+      }
     }
 
-    input {
+    .from,
+    .to {
       background-color: transparent;
       border-top: none;
       border-bottom: 2px solid var(--text-primary-color);
@@ -24,9 +54,27 @@
       border-right: none;
       padding: 0;
       color: var(--text-primary-color);
-      height: 100%;
-      width: 140px;
+      height: 2rem;
       text-align: center;
+
+      @media #{$break1} {
+        width: 150px;
+      }
+      @media #{$break2}, #{$break3} {
+        width: 140px;
+        margin-left: 1.5rem;
+      }
+    }
+
+    .from {
+      @media #{$break1} {
+        margin-right: 0.5rem;
+      }
+    }
+    .to {
+      @media #{$break1} {
+        margin-left: 0.5rem;
+      }
     }
   }
 
@@ -34,10 +82,19 @@
     list-style: none;
     padding: 0;
     background-color: transparent;
-    overflow-y: scroll;
     max-height: 300px;
-    margin: 60px 0 0;
     width: 100%;
+
+    @media #{$break1} {
+      margin: 2rem 0 0;
+    }
+    @media #{$break2} {
+      margin: 3rem 0 0;
+    }
+    @media #{$break3} {
+      overflow-y: scroll;
+      margin: 60px 0 0;
+    }
   }
 }
 
@@ -69,7 +126,7 @@
 }
 
 .games ul::-webkit-scrollbar-track {
-  background-color: gray;
+  background-color: var(--background-secondary-color);
   border-radius: 8px;
 }
 .games ul::-webkit-scrollbar-thumb {

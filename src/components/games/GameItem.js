@@ -68,8 +68,8 @@ const GameItem = (props) => {
           />
         </div>
         <div className={classes.options}>
-          <button onClick={teamsStatsHandler}>teams stats</button>
-          <button onClick={playersStatsHandler}>players stats</button>
+          <button onClick={teamsStatsHandler}>Teams stats</button>
+          <button onClick={playersStatsHandler}>Players stats</button>
         </div>
       </div>
     </li>

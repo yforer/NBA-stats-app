@@ -1,5 +1,6 @@
+@import "../../scss/variables";
+
 .container {
-  height: 170px;
   background-color: var(--background-primary-color);
   z-index: 9;
   position: fixed;
@@ -7,20 +8,34 @@
   right: 0;
   bottom: 0;
   left: 0;
+  height: 10rem;
 
   .header {
     max-width: 1440px;
     margin: auto;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-
     z-index: 10;
+    box-shadow: 0 0 50px rgba(10, 10, 84);
+
+    @media #{$break1} {
+      margin-top: 1.5rem;
+    }
+    @media #{$break2}, #{$break3} {
+      margin-top: 2rem;
+    }
   }
 }
 
 .main {
-  margin: 13rem auto;
-  width: 90%;
+  position: absolute;
+  width: 100%;
   max-width: 1280px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media #{$break1} {
+    top: 9rem;
+  }
+  @media #{$break2}, #{$break3} {
+    top: 12rem;
+  }
 }

@@ -1,7 +1,18 @@
+@import "../../scss/variables";
+
 .nav {
   background-color: var(--background-primary-color);
   max-width: 1440px;
-  margin: 0 80px;
+
+  @media #{$break1} {
+    margin: 0 1.5rem;
+  }
+  @media #{$break2} {
+    margin: 0 4rem;
+  }
+  @media #{$break3} {
+    margin: 0 5rem;
+  }
 
   ul {
     list-style: none;
@@ -10,8 +21,12 @@
     align-items: center;
     width: 100%;
     padding: 0;
-    margin-top: 16px;
     max-width: 1280px;
+    margin-top: 2rem;
+
+    @media #{$break1} {
+      margin-top: 1.5rem;
+    }
 
     li {
       max-width: 640px;
@@ -20,23 +35,32 @@
       position: relative;
 
       &:first-child {
-        margin-right: 20px;
+        @media #{$break1} {
+          margin-right: 0.5rem;
+        }
+        @media #{$break2}, #{$break3} {
+          margin-right: 20px;
+        }
       }
 
       &:nth-child(2) {
-        margin-left: 20px;
+        @media #{$break1} {
+          margin-left: 0.5rem;
+        }
+        @media #{$break2}, #{$break3} {
+          margin-left: 20px;
+        }
       }
 
       a {
         display: inline-block;
-        position: absolute;
+        position: relative;
         text-decoration: none;
         background-color: var(--background-primary-color);
         color: var(--text-primary-color);
         padding: 8px 0 8px;
-        width: inherit;
+        width: 100%;
         text-align: center;
-        font-size: 1.25rem;
         transition: border-bottom 0.3s;
         overflow: hidden;
         border-bottom: 2px solid rgb(83, 92, 164);
@@ -49,6 +73,16 @@
         &:active {
           border-bottom: 2px solid var(--text-primary-color);
           font-weight: bold;
+        }
+
+        @media #{$break1} {
+          font-size: 16px;
+        }
+        @media #{$break2} {
+          font-size: 18px;
+        }
+        @media #{$break3} {
+          font-size: 20px;
         }
       }
     }

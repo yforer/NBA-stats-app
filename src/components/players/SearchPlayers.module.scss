@@ -2,26 +2,47 @@
 
 .headline {
   display: flex;
-  justify-content: space-between;
   position: relative;
   color: var(--text-primary-color);
   max-width: 1062px;
-  margin: 0 auto 72px;
-  padding-top: 48px;
+
+  @media #{$break1} {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 3rem 1.5rem 3rem;
+  }
+  @media #{$break2} {
+    justify-content: space-between;
+    margin: 4rem 4rem 3rem;
+  }
+  @media #{$break3} {
+    justify-content: space-between;
+    margin: 5rem max(5rem, calc((100% - 1062px) / 2)) 3rem;
+  }
 
   h2 {
+    line-height: 4rem;
     margin: 0;
   }
 
   .search {
-    position: absolute;
-    right: 0;
     border: 2px solid var(--text-secondary-color);
     border-radius: 16px;
-    width: 50%;
     padding: 8px 0 8px;
     z-index: 5;
     background-color: var(--background-primary-color);
+
+    @media #{$break1} {
+      width: 330px;
+      position: relative;
+      margin: auto;
+    }
+    @media #{$break2}, #{$break3} {
+      width: 410px;
+      position: absolute;
+      right: 0;
+    }
 
     .bar {
       display: flex;

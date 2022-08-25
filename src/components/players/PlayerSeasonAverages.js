@@ -15,13 +15,6 @@ const PlayerSeasonAverages = (props) => {
     dispatch(statsActions.playerAveragesStatsChosenHandler());
   };
 
-  // const content = averagesSummary.map((stat) => (
-  //   <li key={stat.category}>
-  //     <div>{stat.category}</div>
-  //     <div>{stat.value}</div>
-  //   </li>
-  // ));
-
   const content = (
     <Fragment>
       <div className={classes.category}>

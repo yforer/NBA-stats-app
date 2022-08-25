@@ -20,7 +20,7 @@ const PlayerSeasonGamesListItem = (props) => {
   };
 
   return (
-    <li key={props.id}>
+    <li className={classes.item} key={props.id}>
       <button onClick={gameChosenHandler}>
         <div className={classes.date}>{props.date}</div>
         <div

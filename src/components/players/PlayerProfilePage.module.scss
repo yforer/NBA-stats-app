@@ -1,40 +1,118 @@
+@import "../../scss/variables";
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1062px;
+
+  @media #{$break1} {
+    margin: 0 1.5rem;
+  }
+  @media #{$break2} {
+    margin: 0 4rem;
+  }
+  @media #{$break3} {
+    margin: 0 max(5rem, calc((100% - 1062px) / 2));
+  }
 
   .info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1062px;
-    width: 1062px;
+    width: 100%;
     border-bottom: 2px solid var(--background-secondary-color);
 
+    @media #{$break1} {
+      margin-top: 1rem;
+      height: 150px;
+    }
+
     h2 {
-      text-align: center;
+      @media #{$break1} {
+        position: absolute;
+        top: 5.25rem;
+        left: 3rem;
+      }
+      @media #{$break2} {
+        position: relative;
+        top: 1rem;
+        left: 0;
+      }
+      @media #{$break3} {
+        text-align: center;
+      }
     }
 
     img {
       width: 150px;
-      padding: 24px 0 24px 48px;
+      padding: 2rem 0 2rem 4rem;
       margin-left: 50px;
+
+      @media #{$break1} {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        padding: 2.5rem 0 2.5rem 5rem;
+      }
     }
 
     button {
-      width: 200px;
       cursor: pointer;
-      background-color: transparent;
       color: var(--text-quaternary-color);
+      padding: 0;
+      background-color: transparent;
       border: none;
       font-weight: bold;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--text-primary-color);
+      }
+
+      @media #{$break1} {
+        display: none;
+      }
+      @media #{$break2} {
+        width: 200px;
+        position: absolute;
+        top: 3rem;
+        left: 4rem;
+        text-align: left;
+      }
+      @media #{$break3} {
+        width: 200px;
+      }
+    }
+
+    .mobile-button {
+      display: none;
+      @media #{$break1} {
+        display: block;
+        position: absolute;
+        top: 5.25rem;
+        left: 1rem;
+      }
     }
   }
 
   .sections {
     display: flex;
-    justify-content: space-between;
-    width: 1062px;
-    margin-top: 50px;
+    width: 100%;
+
+    @media #{$break1} {
+      margin-top: 2rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media #{$break2} {
+      margin-top: 3rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    @media #{$break3} {
+      margin-top: 3rem;
+      justify-content: space-between;
+    }
   }
 }

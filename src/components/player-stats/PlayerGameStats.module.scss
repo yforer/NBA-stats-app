@@ -2,27 +2,30 @@
 
 .container {
   margin: auto;
-  width: 500px;
   max-height: 600px;
   background-color: var(--background-primary-color);
   border-radius: 24px;
   border: 2px solid var(--text-secondary-color);
   overflow: hidden;
 
+  @media #{$break1} {
+    width: max(65vw, 330px);
+  }
+  @media #{$break2}, #{$break3} {
+    width: 500px;
+  }
+
   .headline {
     border-bottom: 2px solid var(--text-secondary-color);
     width: 100%;
 
     h3 {
-      color: var(--text-primary-color);
       text-align: center;
       margin-bottom: 8px;
     }
 
     .header {
-      margin: 0;
       text-align: center;
-      color: var(--text-primary-color);
       margin-bottom: 16px;
     }
 
@@ -62,7 +65,7 @@
 }
 
 .container ul::-webkit-scrollbar-track {
-  background-color: gray;
+  background-color: var(--background-secondary-color);
   border-radius: 8px;
 }
 .container ul::-webkit-scrollbar-thumb {

@@ -2,24 +2,51 @@
 
 .stats {
   display: flex;
-  padding: 3rem;
+
+  @media #{$break1} {
+    padding: 1.5rem;
+  }
+  @media #{$break2}, #{$break3} {
+    padding: 3rem;
+  }
 
   .player {
     min-width: max-content;
-    border-right: 2px solid var(--text-secondary-color);
-    padding-right: 48px;
-    margin-right: 48px;
     padding-bottom: 8px;
+
+    @media #{$break1} {
+      margin-right: 1rem;
+    }
+    @media #{$break2} {
+      border-right: 2px solid var(--text-secondary-color);
+      padding-right: 1.5rem;
+      margin-right: 1.5rem;
+    }
+    @media #{$break3} {
+      border-right: 2px solid var(--text-secondary-color);
+      padding-right: 3rem;
+      margin-right: 3rem;
+    }
 
     div {
       padding: 8px 0 8px;
-      margin-left: 8px;
+      margin: 0 0 0 0.5rem;
       color: var(--text-primary-color);
       font-weight: $medium;
+
+      @media #{$break1} {
+        padding: 6px 0;
+        margin: 0;
+      }
 
       &:first-child {
         text-align: left;
         color: var(--text-secondary-color);
+        margin-bottom: 0.5rem;
+
+        @media #{$break1} {
+          margin-bottom: 0.25rem;
+        }
       }
     }
   }
@@ -37,22 +64,49 @@
         display: grid;
         grid-template-columns: repeat(20, 1fr);
         padding: 8px 0 8px;
+        margin: 0;
+
+        @media #{$break1} {
+          padding: 6px 0 6px;
+        }
 
         &:first-child {
           color: var(--text-secondary-color);
           font-weight: $medium;
+          margin-bottom: 0.5rem;
+
+          @media #{$break1} {
+            margin-bottom: 0.25rem;
+          }
         }
 
         div {
           text-align: center;
-          width: 90px;
+
+          @media #{$break1} {
+            width: 50px;
+          }
+          @media #{$break2} {
+            width: 75px;
+          }
+          @media #{$break3} {
+            width: 90px;
+          }
         }
 
         p {
           text-align: center;
-          width: 90px;
           margin: 0;
-          color: var(--text-primary-color);
+
+          @media #{$break1} {
+            width: 50px;
+          }
+          @media #{$break2} {
+            width: 75px;
+          }
+          @media #{$break3} {
+            width: 90px;
+          }
         }
       }
     }
@@ -68,7 +122,7 @@
 }
 
 .values::-webkit-scrollbar-track {
-  background-color: gray;
+  background-color: var(--background-secondary-color);
   border-radius: 8px;
 }
 .values::-webkit-scrollbar-thumb {

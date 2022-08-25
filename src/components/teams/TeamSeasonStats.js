@@ -2,6 +2,7 @@ import classes from "./TeamSeasonStats.module.scss";
 import { useParams, useNavigate } from "react-router-dom";
 import { teamsLogos } from "./TeamsLogos";
 import LogoComp from "../UI/LogoComp";
+import MobileBackButton from "../UI/MobileBackButton";
 
 const TeamSeasonStats = (props) => {
   const navigate = useNavigate();
@@ -10,10 +11,6 @@ const TeamSeasonStats = (props) => {
 
   const regularSeasonGames = props.sortedGames.filter(
     (game) => game.postseason === false
-  );
-
-  const postSeasonGames = props.sortedGames.filter(
-    (game) => game.postseason === true
   );
 
   const regularSeasonWins = regularSeasonGames.filter(
@@ -36,6 +33,7 @@ const TeamSeasonStats = (props) => {
           <button
             onClick={backToAllTeamsHndler}
           >{`< Back to all teams`}</button>
+          <MobileBackButton action={backToAllTeamsHndler} isTeams={true} />
           <h2>{`${team.name}`}</h2>
         </div>
       </div>

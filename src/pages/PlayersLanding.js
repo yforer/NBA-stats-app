@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import LeadingPlayers from "../components/players/LeadingPlayers";
 import SearchPlayers from "../components/players/SearchPlayers";
 

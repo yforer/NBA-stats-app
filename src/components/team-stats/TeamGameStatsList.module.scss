@@ -12,9 +12,15 @@
     margin-bottom: 16px;
 
     p {
-      margin: 0 48px;
       padding: 0;
       font-weight: $medium;
+
+      @media #{$break1} {
+        margin: 0 0 0 1.5rem;
+      }
+      @media #{$break2}, #{$break3} {
+        margin: 0 0 0 4rem;
+      }
     }
 
     div {

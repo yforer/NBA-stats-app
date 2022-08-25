@@ -1,26 +1,37 @@
 @import "../../scss/variables";
 
 .season {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--background-secondary-color);
   border-radius: 16px;
-  padding: 24px;
   color: var(--text-secondary-color);
 
-  label {
-    padding: 3px;
-    margin-right: 8px;
+  @media #{$break1} {
+    padding: 1rem;
+  }
+  @media #{$break2}, #{$break3} {
+    padding: 1.5rem;
   }
 
-  input {
-    margin: 2px;
-    color: var(--text-primary-color);
-    background-color: var(--background-secondary-color);
-    border: none;
-    border-bottom: 2px solid var(--text-primary-color);
-    font-weight: $medium;
+  .action {
+    label {
+      padding: 3px;
+      margin-right: 8px;
+    }
 
-    &:focus {
-      outline: none;
+    input {
+      margin: 2px;
+      color: var(--text-primary-color);
+      background-color: var(--background-secondary-color);
+      border: none;
+      border-bottom: 2px solid var(--text-primary-color);
+      font-weight: $medium;
+      line-height: 2rem;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -28,46 +39,74 @@
     background-color: var(--background-secondary-color);
     color: var(--text-primary-color);
     border: 2px solid var(--text-primary-color);
-    margin-left: 16px;
     font-weight: bold;
-    padding: 8px 32px;
-    border-radius: 50px;
+    font-size: 18px;
+    border-radius: 3rem;
     cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--text-primary-color);
+      color: var(--background-secondary-color);
+    }
+
+    @media #{$break1} {
+      width: 80px;
+      padding: 0.5rem 1.5rem;
+      margin-left: 0.5rem;
+    }
+    @media #{$break2}, #{$break3} {
+      width: 115px;
+      padding: 0.5rem 2rem;
+      margin-left: 1rem;
+    }
   }
 }
 
 .season2 {
+  display: flex;
+  flex-direction: column;
   background-color: transparent;
-  border-radius: 8px;
-  margin-top: 16px;
+  margin-top: 1rem;
   color: var(--text-primary-color);
 
-  label {
-    padding: 3px;
-    margin-right: 8px;
-  }
+  .action {
+    label {
+      padding: 3px;
+      margin-right: 8px;
+    }
 
-  input {
-    margin: 2px;
-    color: var(--text-primary-color);
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--text-primary-color);
-    font-weight: $medium;
+    input {
+      margin: 2px;
+      color: var(--text-primary-color);
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid var(--text-primary-color);
+      font-weight: $medium;
+      line-height: 1.5rem;
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
     }
   }
 
   button {
     background-color: var(--background-primary-color);
     color: var(--text-tertiary-color);
-    border: 1px solid var(--text-tertiary-color);
-    margin-left: 16px;
+    border: 2px solid var(--text-tertiary-color);
     font-weight: bold;
-    padding: 4px 16px 2px;
-    border-radius: 16px;
+    font-size: 18px;
+    border-radius: 3rem;
     cursor: pointer;
+    margin-top: 1.5rem;
+    width: 115px;
+    padding: 0.5rem 2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--text-tertiary-color);
+      color: var(--background-primary-color);
+    }
   }
 }

@@ -12,18 +12,23 @@
 
   .logo {
     text-align: center;
+
     img {
-      width: 50px;
-      height: 50px;
+      @media #{$break1} {
+        width: 40px;
+        height: 40px;
+      }
+      @media #{$break2}, #{$break3} {
+        width: 50px;
+        height: 50px;
+      }
     }
 
     p {
       color: var(--text-secondary-color);
-      padding: 0;
-      margin: 0;
       text-align: center;
-      min-width: max-content;
       font-weight: $medium;
+      max-width: fit-content;
     }
   }
 }
