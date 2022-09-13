@@ -1,0 +1,34 @@
+@import "../../scss/variables";
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  h3 {
+    color: var(--text-secondary-color);
+    padding: 12px;
+  }
+
+  .logo {
+    text-align: center;
+
+    img {
+      @media #{$break1} {
+        width: 40px;
+        height: 40px;
+      }
+      @media #{$break2}, #{$break3} {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    p {
+      color: var(--text-secondary-color);
+      text-align: center;
+      font-weight: $medium;
+      max-width: fit-content;
+    }
+  }
+}

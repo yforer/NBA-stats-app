@@ -1,5 +1,5 @@
 import { teamsLogos } from "../teams/TeamsLogos";
-import classes from "./GameItem.module.css";
+import classes from "./GameItem.module.scss";
 import TeamGameItem from "./TeamGameItem";
 import { useDispatch } from "react-redux";
 import { statsActions } from "../../store/stats";
@@ -68,8 +68,8 @@ const GameItem = (props) => {
           />
         </div>
         <div className={classes.options}>
-          <button onClick={teamsStatsHandler}>teams stats</button>
-          <button onClick={playersStatsHandler}>players stats</button>
+          <button onClick={teamsStatsHandler}>Teams stats</button>
+          <button onClick={playersStatsHandler}>Players stats</button>
         </div>
       </div>
     </li>

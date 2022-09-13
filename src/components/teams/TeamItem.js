@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import LogoComp from "../UI/LogoComp";
-import classes from "./TeamItem.module.css";
+import classes from "./TeamItem.module.scss";
 
 const TeamItem = (props) => {
   return (

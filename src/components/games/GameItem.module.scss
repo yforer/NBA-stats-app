@@ -1,0 +1,98 @@
+@import "../../scss/variables";
+
+.list {
+  position: relative;
+  background-color: var(--background-primary-color);
+  margin: 0;
+  border-bottom: 2px solid var(--background-secondary-color);
+  max-width: 1062px;
+
+  &:first-child {
+    @media #{$break1} {
+      border-top: 2px solid var(--background-secondary-color);
+    }
+  }
+
+  .game {
+    width: 100%;
+    display: grid;
+
+    @media #{$break1},#{$break2} {
+      grid-template-columns: 1fr;
+    }
+
+    @media #{$break3} {
+      grid-template-columns: 2fr 5fr 2fr;
+      grid-template-rows: 1fr;
+    }
+
+    .date {
+      width: 100%;
+      padding: 0;
+
+      @media #{$break1}, #{$break2} {
+        color: var(--text-secondary-color);
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      @media #{$break3} {
+        margin: auto 0;
+        color: var(--text-primary-color);
+      }
+    }
+
+    .data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0;
+
+      @media #{$break1}, #{$break2} {
+        width: 100%;
+      }
+
+      @media #{$break3} {
+        width: 482px;
+      }
+    }
+
+    .options {
+      display: flex;
+
+      @media #{$break1}, #{$break2} {
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      @media #{$break3} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      button {
+        width: 116px;
+        padding: 4px;
+        border: none;
+        text-decoration: underline;
+        cursor: pointer;
+        color: var(--text-tertiary-color);
+        background-color: transparent;
+        transition: color 0.3s;
+
+        @media #{$break1}, #{$break2} {
+          text-align: center;
+        }
+
+        @media #{$break3} {
+          text-align: right;
+        }
+
+        &:hover {
+          color: var(--text-primary-color);
+        }
+      }
+    }
+  }
+}

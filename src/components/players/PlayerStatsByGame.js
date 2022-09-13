@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import classes from "./PlayerStatsByGame.module.css";
+import classes from "./PlayerStatsByGame.module.scss";
 import { useSelector } from "react-redux";
 import {
   createGameLinkData,
@@ -50,6 +50,7 @@ const PlayerStatsByGame = (props) => {
       <div className={classes.headline}>
         <h3>Stats by game</h3>
         <input
+          className={classes.from}
           type="text"
           placeholder="From"
           onFocus={(e) => (e.target.type = "date")}
@@ -60,6 +61,7 @@ const PlayerStatsByGame = (props) => {
           ref={startDateInputRef}
         ></input>
         <input
+          className={classes.to}
           type="text"
           placeholder="To"
           onFocus={(e) => (e.target.type = "date")}

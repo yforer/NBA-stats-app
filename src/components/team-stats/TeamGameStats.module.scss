@@ -1,0 +1,108 @@
+@import "../../scss/variables";
+
+.container {
+  border: 2px var(--text-secondary-color) solid;
+  border-radius: 24px;
+  background-color: var(--background-primary-color);
+  margin: auto;
+
+  @media #{$break1} {
+    min-width: max(60vw, 330px);
+    max-height: 530px;
+  }
+  @media #{$break2}, #{$break3} {
+    width: 500px;
+    max-height: 600px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px var(--text-secondary-color) solid;
+    padding-bottom: 2rem;
+
+    p {
+      text-align: center;
+      margin: 0;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .data {
+    .headers {
+      margin-right: 8px;
+      display: grid;
+      text-align: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      color: var(--text-secondary-color);
+
+      p {
+        margin-top: 64px;
+      }
+
+      .logo {
+        align-self: center;
+        justify-self: center;
+
+        @media #{$break1} {
+          margin: 0.5rem 0 0.5rem;
+        }
+        @media #{$break2}, #{$break3} {
+          margin: 1rem 0;
+        }
+
+        img {
+          height: 40px;
+          width: 40px;
+          margin-top: 8px;
+        }
+
+        p {
+          margin: 8px;
+          font-weight: bold;
+          color: var(--text-secondary-color);
+
+          @media #{$break1} {
+            max-width: fit-content;
+          }
+        }
+      }
+    }
+
+    .stats {
+      overflow-y: scroll;
+      max-width: inherit;
+      color: var(--text-primary-color);
+      margin-bottom: 16px;
+
+      @media #{$break1} {
+        max-height: 260px;
+      }
+      @media #{$break2}, #{$break3} {
+        max-height: 290px;
+      }
+    }
+  }
+}
+
+.stats::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stats::-webkit-scrollbar-button {
+  display: none;
+}
+
+.stats::-webkit-scrollbar-track {
+  background-color: var(--background-secondary-color);
+  border-radius: 8px;
+}
+
+.stats::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}

@@ -2,13 +2,14 @@ import { Fragment, useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { playerActions } from "../../store/player";
-import classes from "./PlayerProfilePage.module.css";
+import classes from "./PlayerProfilePage.module.scss";
 import PlayerSeasonAverages from "./PlayerSeasonAverages";
 import PlayerStatsByGame from "./PlayerStatsByGame";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { getPlayerProfileData } from "../../services/playersProfileService";
 import { useNavigate } from "react-router-dom";
 import LogoComp from "../UI/LogoComp";
+import MobileBackButton from "../UI/MobileBackButton";
 
 const PlayerProfilePage = () => {
   const dispatch = useDispatch();
@@ -76,7 +77,8 @@ const PlayerProfilePage = () => {
             <button
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
-            <h1>{playerName}</h1>
+            <MobileBackButton action={backToPlayersHandler} isTeams={false} />
+            <h2>{playerName}</h2>
             <LogoComp id={playerGeneralData.team} />
           </div>
           <div className={classes.sections}>

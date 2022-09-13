@@ -1,0 +1,20 @@
+@import "../../scss/variables";
+
+.games {
+  @media #{$break1} {
+    margin: 12rem 1.5rem 0;
+  }
+  @media #{$break2} {
+    margin: 3rem 4rem 0;
+  }
+  @media #{$break3} {
+    margin: 4rem 5rem 0;
+  }
+
+  ul {
+    list-style: none;
+    max-width: 1064px;
+    margin: auto;
+    padding: 0;
+  }
+}

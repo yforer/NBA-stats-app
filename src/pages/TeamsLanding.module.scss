@@ -1,0 +1,51 @@
+@import "../scss/variables";
+
+.container {
+  @media #{$break1} {
+    margin: 4rem 1.5rem 0;
+  }
+  @media #{$break2} {
+    margin: 0 4rem;
+  }
+  @media #{$break3} {
+    max-width: 1062px;
+    margin: 0 clamp(5rem, 10%, 109px);
+  }
+
+  h2 {
+    @media #{$break1} {
+      text-align: center;
+      margin: 1rem 1.5rem 2rem;
+    }
+    @media #{$break2} {
+      margin: 3.5rem 0;
+    }
+    @media #{$break3} {
+      margin: 5rem 0;
+    }
+  }
+
+  .teams {
+    position: relative;
+    display: grid;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media #{$break1} {
+      width: 83vw;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(15, minmax(156px, 40vw));
+      grid-gap: 1rem;
+    }
+    @media #{$break2} {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(10, minmax(200px, 26vw));
+      grid-gap: 1.5rem;
+    }
+    @media #{$break3} {
+      grid-gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(10, minmax(320px, 15vw));
+    }
+  }
+}

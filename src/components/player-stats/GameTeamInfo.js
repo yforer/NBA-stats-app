@@ -1,4 +1,4 @@
-import classes from "./GameTeamInfo.module.css";
+import classes from "./GameTeamInfo.module.scss";
 import { teamsLogos } from "../teams/TeamsLogos";
 import LogoComp from "../UI/LogoComp";
 import { Fragment } from "react";

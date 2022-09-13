@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { playerActions } from "../../store/player";
 import { statsActions } from "../../store/stats";
-import classes from "./PlayerSeasonGamesListItem.module.css";
+import classes from "./PlayerSeasonGamesListItem.module.scss";
 
 const PlayerSeasonGamesListItem = (props) => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const PlayerSeasonGamesListItem = (props) => {
   };
 
   return (
-    <li key={props.id}>
+    <li className={classes.item} key={props.id}>
       <button onClick={gameChosenHandler}>
         <div className={classes.date}>{props.date}</div>
         <div

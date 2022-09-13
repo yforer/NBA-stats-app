@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import MainHeader from "./MainHeader";
-import classes from "./Layout.module.css";
+import classes from "./Layout.module.scss";
 import MainNavigation from "./MainNavigation";
 import { useSelector } from "react-redux";
 

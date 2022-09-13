@@ -1,4 +1,4 @@
-import classes from "./PlayersGameStatsList.module.css";
+import classes from "./PlayersGameStatsList.module.scss";
 
 const PlayersGameStatsList = (props) => {
   const formattedPlayersStats = props.gameStats.map((player) => {

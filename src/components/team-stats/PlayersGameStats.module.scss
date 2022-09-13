@@ -1,0 +1,112 @@
+@import "../../scss/variables";
+
+.container {
+  border: 2px var(--text-secondary-color) solid;
+  border-radius: 24px;
+  background-color: var(--background-primary-color);
+  margin: auto;
+
+  @media #{$break1} {
+    max-width: max(70vw, 330px);
+    height: 615px;
+  }
+  @media #{$break2} {
+    height: 714px;
+    max-width: max(80vw, 640px);
+  }
+  @media #{$break3} {
+    max-width: 1064px;
+    height: 714px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      text-align: center;
+      margin: 0 0 0.5rem;
+
+      @media #{$break1} {
+        margin: 0 0 1rem;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      margin: 0 0 0.5rem 0;
+    }
+  }
+
+  .team {
+    display: flex;
+
+    @media #{$break1} {
+      margin: 0 1rem 0;
+    }
+    @media #{$break2}, #{$break3} {
+      margin: 0 2rem 0;
+    }
+
+    button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid var(--text-secondary-color);
+      cursor: pointer;
+      width: 50%;
+      padding: 0 0 8px;
+      transition: border-bottom 0.3s;
+      color: var(--text-secondary-color);
+
+      @media #{$break1} {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0.5rem;
+      }
+      @media #{$break2}, #{$break3} {
+        align-items: center;
+        justify-content: center;
+        margin: 8px 16px 0;
+      }
+
+      img {
+        @media #{$break1} {
+          margin: 0 0 0.5rem;
+          width: 40px;
+          height: 40px;
+        }
+        @media #{$break2}, #{$break3} {
+          margin-right: 1rem;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      p {
+        color: var(--text-secondary-color);
+        font-weight: bold;
+        transition: font-weight 0.3s;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        border-bottom: 2px solid var(--text-primary-color);
+      }
+
+      &:hover p {
+        color: var(--text-primary-color);
+      }
+
+      &:active,
+      &.active {
+        border-bottom: 2px solid var(--text-primary-color);
+
+        p {
+          color: var(--text-primary-color);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

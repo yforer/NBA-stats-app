@@ -1,4 +1,4 @@
-import classes from "./PlayerGameStats.module.css";
+import classes from "./PlayerGameStats.module.scss";
 import { useSelector } from "react-redux";
 import { formatPlayerGameData } from "../../services/singlePlayerGameStatsService";
 import GameTeamInfo from "./GameTeamInfo";
@@ -17,9 +17,9 @@ const PlayerGameStats = (props) => {
   const formattedGameStats = formatPlayerGameData(chosenGameData);
 
   const gameStatsContent = formattedGameStats.map((stat) => (
-    <li key={stat.category}>
-      <div>{stat.category}</div>
-      <div>{stat.value}</div>
+    <li className={classes.item} key={stat.category}>
+      <p className={classes['item-category']}>{stat.category}</p>
+      <p className={classes['item-value']}>{stat.value}</p>
     </li>
   ));
 
@@ -27,7 +27,7 @@ const PlayerGameStats = (props) => {
     <div className={classes.container}>
       <div className={classes.headline}>
         <CloseButton onClose={props.onClose} />
-        <h2>{`${playerData.playerName}`}</h2>
+        <h3>{`${playerData.playerName}`}</h3>
         <p className={classes.header}>Full game stats</p>
         <div className={classes.game}>
           <GameTeamInfo
@@ -42,7 +42,7 @@ const PlayerGameStats = (props) => {
           />
         </div>
       </div>
-      <ul>{gameStatsContent}</ul>
+      <ul className={classes.list}>{gameStatsContent}</ul>
     </div>
   );
 };

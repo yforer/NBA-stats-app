@@ -41,15 +41,15 @@ const reorderCategories = (teamGameStats) => {
     oreb: teamGameStats.oreb,
     fg3a: teamGameStats.fg3a,
     fg3m: teamGameStats.fg3m,
-    fg3_pct: teamGameStats.fg3_pct,
+    "fg3%": teamGameStats.fg3_pct,
     fga: teamGameStats.fga,
     fgm: teamGameStats.fgm,
-    fg_pct: teamGameStats.fg_pct,
+    "fg%": teamGameStats.fg_pct,
     fta: teamGameStats.fta,
     ftm: teamGameStats.ftm,
-    ft_pt: teamGameStats.ft_pct,
+    "ft%": teamGameStats.ft_pct,
     pf: teamGameStats.pf,
-    turnover: teamGameStats.turnover,
+    tov: teamGameStats.turnover,
   };
 
   return orderedTeamGameStats;

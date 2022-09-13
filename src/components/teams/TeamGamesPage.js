@@ -4,7 +4,7 @@ import { getSeasonTeamGames } from "../../services/teamGamesPageService";
 import GamesList from "../games/GamesList";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { teamsLogos } from "./TeamsLogos";
-import classes from "./TeamGamesPage.module.css";
+import classes from "./TeamGamesPage.module.scss";
 import { useSelector } from "react-redux";
 import TeamSeasonStats from "./TeamSeasonStats";
 

@@ -1,4 +1,4 @@
-import classes from "./TeamsLanding.module.css";
+import classes from "./TeamsLanding.module.scss";
 import { teamsLogos } from "../components/teams/TeamsLogos";
 import TeamItem from "../components/teams/TeamItem";
 
@@ -9,7 +9,7 @@ const TeamsLanding = () => {
 
   return (
     <div className={classes.container}>
-      <h1>Teams</h1>
+      <h2>Teams</h2>
       <div className={classes.teams}>{teamsList}</div>
     </div>
   );
