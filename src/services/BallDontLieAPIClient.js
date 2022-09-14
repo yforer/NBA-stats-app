@@ -119,24 +119,9 @@ export const getAllPlayerSeasonGamesStatsAPI = async (season, playerId) => {
     data.data.push(...dataPage2.data);
   }
 
-  return data.data;
-};
-
-export const getPlayerSeasonGamesStatsByDateAPI = async (
-  season,
-  playerId,
-  startDate = `${season}-10-01`,
-  endDate = `${season + 1}-07-01`
-) => {
-  const response = await fetch(
-    `https://www.balldontlie.io/api/v1/stats?seasons[]=${season}&player_ids[]=${playerId}&start_date=${startDate}&end_date=${endDate}&per_page=100`
+  const gamesPlayedData = data.data.filter(
+    (gameStats) => gameStats.min !== null
   );
 
-  if (!response.ok) {
-    throw new Error("failed to fetch player season games stats by dates");
-  }
-
-  const data = await response.json();
-
-  return data;
+  return gamesPlayedData;
 };

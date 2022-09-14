@@ -21,7 +21,6 @@ const SeasonForm = (props) => {
     dispatch(seasonActions.seasonYear(event.currentTarget[0].value));
     dispatch(seasonActions.seasonChosen(event.currentTarget[0].value));
     navigate("/teams");
-    console.log(isSeasonChosen);
   };
 
   const changeSeasonHandler = (event) => {
