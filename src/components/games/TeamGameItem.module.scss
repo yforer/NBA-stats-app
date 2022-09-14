@@ -34,13 +34,13 @@
     justify-content: center;
     min-width: max-content;
     height: 110px;
+    width: 105px;
 
     @media #{$break1} {
       width: 5rem;
     }
 
     img {
-      width: 105px;
       height: 48px;
       width: 48px;
       margin-top: 8px;
