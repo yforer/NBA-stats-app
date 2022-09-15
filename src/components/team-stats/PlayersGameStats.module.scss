@@ -8,15 +8,18 @@
 
   @media #{$break1} {
     max-width: max(70vw, 330px);
-    height: 615px;
+    min-height: 615px;
+    max-height: 650px;
   }
   @media #{$break2} {
-    height: 714px;
+    min-height: 715px;
+    max-height: 750px;
     max-width: max(80vw, 640px);
   }
   @media #{$break3} {
     max-width: 1064px;
-    height: 714px;
+    min-height: 715px;
+    max-height: 750px;
   }
 
   .info {

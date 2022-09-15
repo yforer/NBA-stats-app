@@ -8,7 +8,10 @@ export const formatPlayerGameData = (playerGameStats) => {
     { category: "FGM", value: playerGameStats.fgm },
     {
       category: "FG%",
-      value: (playerGameStats.fg_pct * 100).toFixed(0) + "%",
+      value:
+        playerGameStats.fg_pct > 1
+          ? playerGameStats.fg_pct + "%"
+          : (playerGameStats.fg_pct * 100).toFixed(0) + "%",
     },
     { category: "STL", value: playerGameStats.stl },
     { category: "BLK", value: playerGameStats.blk },
@@ -16,13 +19,19 @@ export const formatPlayerGameData = (playerGameStats) => {
     { category: "FG3M", value: playerGameStats.fg3m },
     {
       category: "FG3%",
-      value: (playerGameStats.fg3_pct * 100).toFixed(0) + "%",
+      value:
+        playerGameStats.fg3_pct > 1
+          ? playerGameStats.fg3_pct + "%"
+          : (playerGameStats.fg3_pct * 100).toFixed(0) + "%",
     },
     { category: "FTA", value: playerGameStats.fta },
     { category: "FTM", value: playerGameStats.ftm },
     {
       category: "FT%",
-      value: (playerGameStats.ft_pct * 100).toFixed(0) + "%",
+      value:
+        playerGameStats.ft_pct > 1
+          ? playerGameStats.ft_pct + "%"
+          : (playerGameStats.ft_pct * 100).toFixed(0) + "%",
     },
     { category: "DREB", value: playerGameStats.dreb },
     { category: "OREB", value: playerGameStats.oreb },
