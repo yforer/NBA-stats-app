@@ -3,7 +3,11 @@ import { separatePlayersToTeams } from "./teamGameStatsService";
 
 const formatAndSortPlayersStats = (playersStats) => {
   const omittedPlayersNotPlayed = playersStats.filter(
-    (player) => player.min !== null
+    (player) =>
+      player.min !== "0:00" &&
+      player.min !== null &&
+      player.min !== "0" &&
+      player.min !== ""
   );
 
   const formattedPlayersStats = omittedPlayersNotPlayed.map(
@@ -20,13 +24,22 @@ const formatAndSortPlayersStats = (playersStats) => {
         oreb: player.oreb,
         fg3a: player.fg3a,
         fg3m: player.fg3m,
-        "fg3%": (player.fg3_pct * 100).toFixed(0) + "%",
+        "fg3%":
+          player.fg3_pct > 1
+            ? player.fg3_pct + "%"
+            : (player.fg3_pct * 100).toFixed(0) + "%",
         fga: player.fga,
         fgm: player.fgm,
-        "fg%": (player.fg_pct * 100).toFixed(0) + "%",
+        "fg%":
+          player.fg_pct > 1
+            ? player.fg_pct + "%"
+            : (player.fg_pct * 100).toFixed(0) + "%",
         fta: player.fta,
         ftm: player.ftm,
-        "ft%": (player.ft_pct * 100).toFixed(0) + "%",
+        "ft%":
+          player.ft_pct > 1
+            ? player.ft_pct + "%"
+            : (player.ft_pct * 100).toFixed(0) + "%",
         pf: player.pf,
         tov: player.turnover,
       })
