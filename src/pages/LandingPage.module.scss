@@ -34,6 +34,16 @@
     }
 
     h1 {
+      @media #{$break1} {
+        line-height: 64px;
+      }
+      @media #{$break2} {
+        line-height: 96px;
+      }
+      @media #{$break3} {
+        line-height: 120px;
+      }
+
       span {
         color: var(--text-quaternary-color);
       }

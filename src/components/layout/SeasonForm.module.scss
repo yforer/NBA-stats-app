@@ -28,21 +28,29 @@
       border-bottom: 2px solid var(--text-primary-color);
       font-weight: bold;
       line-height: 2rem;
+      width: 64px;
 
       &:focus {
+        font-weight: bold;
+        width: 64px;
         outline: none;
+        outline-offset: 0;
       }
       &-chosen {
+        font-weight: bold;
+        width: 64px;
         border: none;
         background-color: var(--background-secondary-color);
         border-bottom: 2px solid var(--text-primary-color);
         line-height: 2rem;
         margin: 2px;
-        font-weight: bold;
         color: var(--text-primary-color);
 
         &:focus {
+          font-weight: bold;
+          width: 64px;
           outline: none;
+          outline-offset: 0;
         }
       }
     }
@@ -97,15 +105,24 @@
       border-bottom: 2px solid var(--text-primary-color);
       font-weight: bold;
       line-height: 1.5rem;
+      width: 64px;
 
       &:focus {
         outline: none;
+        width: 64px;
       }
     }
 
-    .chosen {
+    &-chosen {
+      width: 64px;
       font-weight: bold;
       color: var(--background-secondary-color);
+
+      &:focus {
+        font-weight: bold;
+        outline: none;
+        width: 64px;
+      }
     }
   }
 
