@@ -90,7 +90,7 @@
           ul {
             display: grid;
             grid-column-gap: 3rem;
-            grid-template-columns: 1fr, 1fr;
+            grid-template-columns: 1fr 24px 1fr;
             grid-template-rows: repeat(3, 2rem);
 
             li {
@@ -101,16 +101,14 @@
                 grid-column-end: 2;
               }
               &:nth-child(4) {
-                padding-left: 1.2rem;
-                grid-column-start: 2;
-                grid-column-end: 3;
+                grid-column-start: 3;
+                grid-column-end: 4;
                 grid-row-start: 1;
               }
               &:nth-child(5) {
-                padding-left: 1.2rem;
                 grid-row-start: 2;
-                grid-column-start: 2;
-                grid-column-end: 3;
+                grid-column-start: 3;
+                grid-column-end: 4;
               }
             }
           }
