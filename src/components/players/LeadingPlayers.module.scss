@@ -114,6 +114,9 @@
           }
         }
       }
+      @media #{$break3} {
+        min-width: 310px;
+      }
     }
   }
 }

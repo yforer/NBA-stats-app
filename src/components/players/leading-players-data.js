@@ -437,7 +437,7 @@ export const leadingPlayersData = {
       { name: "Anthony Davis", value: 28.1 },
       { name: "LeBron James", value: 27.5 },
       { name: "Damian Lillard", value: 26.9 },
-      { name: "Giannis Antetokounmpo", value: 26.9 },
+      { name: "G. Antetokounmpo", value: 26.9 },
     ],
     rebounds: [
       { name: "Andre Drummond", value: 16.0 },
@@ -459,7 +459,7 @@ export const leadingPlayersData = {
     points: [
       { name: "James Harden", value: 36.1 },
       { name: "Paul George", value: 28.0 },
-      { name: "Giannis Antetokounmpo", value: 27.7 },
+      { name: "G. Antetokounmpo", value: 27.7 },
       { name: "Joel Embiid", value: 27.5 },
       { name: "LeBron James", value: 27.4 },
     ],
@@ -485,12 +485,12 @@ export const leadingPlayersData = {
       { name: "Bradley Beal", value: 30.5 },
       { name: "Damian Lillard", value: 30.0 },
       { name: "Trae Young", value: 29.6 },
-      { name: "Giannis Antetokounmpo", value: 29.5 },
+      { name: "G. Antetokounmpo", value: 29.5 },
     ],
     rebounds: [
       { name: "Andre Drummond", value: 15.2 },
       { name: "Clint Capela", value: 13.8 },
-      { name: "Giannis Antetokounmpo", value: 13.6 },
+      { name: "G. Antetokounmpo", value: 13.6 },
       { name: "Hassan Whiteside", value: 13.5 },
       { name: "Rudy Gobert", value: 13.5 },
     ],
@@ -509,7 +509,7 @@ export const leadingPlayersData = {
       { name: "Bradley Beal", value: 31.3 },
       { name: "Damian Lillard", value: 28.8 },
       { name: "Joel Embiid", value: 28.5 },
-      { name: "Giannis Antetokounmpo", value: 28.1 },
+      { name: "G. Antetokounmpo", value: 28.1 },
     ],
     rebounds: [
       { name: "Clint Capela", value: 14.3 },
@@ -531,7 +531,7 @@ export const leadingPlayersData = {
     points: [
       { name: "Joel Embiid", value: 30.6 },
       { name: "LeBron James", value: 30.3 },
-      { name: "Giannis Antetokounmpo", value: 29.9 },
+      { name: "G. Antetokounmpo", value: 29.9 },
       { name: "Kevin Durant", value: 29.9 },
       { name: "Luka Doncic", value: 28.4 },
     ],

@@ -6,7 +6,10 @@ import classes from "./PlayerProfilePage.module.scss";
 import PlayerSeasonAverages from "./PlayerSeasonAverages";
 import PlayerStatsByGame from "./PlayerStatsByGame";
 import LoadingSpinner from "../UI/LoadingSpinner";
-import { getPlayerProfileData } from "../../services/playersProfileService";
+import {
+  getPlayerProfileData,
+  cutLongName,
+} from "../../services/playersProfileService";
 import { useNavigate } from "react-router-dom";
 import LogoComp from "../UI/LogoComp";
 import MobileBackButton from "../UI/MobileBackButton";
@@ -23,6 +26,10 @@ const PlayerProfilePage = () => {
   const seasonYear = useSelector((state) => state.season.season);
   const params = useParams();
   const playerName = params.playerName.replace("-", " ");
+  const playerDisplayName =
+    params.playerName.length <= 20
+      ? params.playerName.replace("-", " ")
+      : cutLongName(params.playerName);
   const navigate = useNavigate();
 
   const backToPlayersHandler = () => {
@@ -78,7 +85,7 @@ const PlayerProfilePage = () => {
               onClick={backToPlayersHandler}
             >{`< Back to players page`}</button>
             <MobileBackButton action={backToPlayersHandler} isTeams={false} />
-            <h2>{playerName}</h2>
+            <h2>{playerDisplayName}</h2>
             <LogoComp id={playerGeneralData.team} />
           </div>
           <div className={classes.sections}>
