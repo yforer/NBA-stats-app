@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# NBA Stats App
+<br /><br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/93477894/192142506-7a8f6a27-8406-46bd-b2c2-2f004eaffacc.mp4
 
-## Available Scripts
+<br />
+<p align='center'>A NBA statistics app (games, players and more) for a chosen season!<p/>
 
-In the project directory, you can run:
+<div align='center'>
+<a href='https://github.com/yforer/NBA-stats-app/'>Project docs ></a>
+/
+<a href='https://master--dashing-licorice-aa0e16.netlify.app/'>Project demo ></a>
+</div>
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#design-and-user-interface">Design And User Interface</a></li>
+        <li><a href="#final-product">Final Product</a></li>
+        <li><a href="#languages-and-tools">Languages And Tools</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
 
-### `npm test`
+## About The Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This NBA statistics app contains teams and players data including games stats, teams stats and player stats & averages.
+To use the app just choose a season and start to explore.
 
-### `npm run build`
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Design And User Interface
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img width="500" alt="צילום מסך 2022-09-25 154633" src="https://user-images.githubusercontent.com/93477894/192145554-451560b1-d256-4e9f-bd17-867ab0af31a3.png">
+<img width="300" alt="צילום מסך 2022-09-25 154716" src="https://user-images.githubusercontent.com/93477894/192145559-5dbbcf61-89b0-400a-b3fe-0155f4c28b1a.png">
+<img width="150" alt="צילום מסך 2022-09-25 154747" src="https://user-images.githubusercontent.com/93477894/192145565-ff143c0b-a6e7-48be-831f-ad066a7f94ce.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+### Final Product
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img width="500" alt="צילום מסך 2022-09-25 154922" src="https://user-images.githubusercontent.com/93477894/192145787-3c266162-9661-4f3c-8f6f-9a8b34d95263.png">
+<img width="300" alt="צילום מסך 2022-09-25 155006" src="https://user-images.githubusercontent.com/93477894/192145793-d1ad1218-7411-4dec-977a-443869594eba.png">
+<img width="150" alt="צילום מסך 2022-09-25 155043" src="https://user-images.githubusercontent.com/93477894/192145797-b9ea301c-c0b7-47e4-a25c-475ac23b25a5.png">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Languages And Tools
+<ul>
+  <li>React</li>
+  <li>Redux</li>
+  <li>SASS</li>
+  <li>CSS Modules</li>
+  <li>REST API (https://www.balldontlie.io/)</li>
+ </ul>
+  
+<br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Getting Started
+To get a local copy up and running follow these simple steps.
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repo
+   ```sh
+   git clone https://github.com/yforer/NBA-stats-app.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact
 
-### Analyzing the Bundle Size
+Project Link: [https://github.com/yforer/NBA-stats-app/](https://github.com/yforer/NBA-stats-app/)
+<br />
+Project Demo: [https://master--dashing-licorice-aa0e16.netlify.app/](https://master--dashing-licorice-aa0e16.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
