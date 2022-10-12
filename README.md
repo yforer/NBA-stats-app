@@ -85,6 +85,10 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install
    ```
+3. Run the project
+   ```sh
+   npm start
+   ```
 
 
 <br />
